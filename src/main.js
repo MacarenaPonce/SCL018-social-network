@@ -1,5 +1,4 @@
-// Este es el punto de entrada de tu aplicacion
+import { template } from './lib/login.js';
 
-import { myFunction } from './lib/index.js';
+document.getElementById('root').appendChild(template());
 
-myFunction();
