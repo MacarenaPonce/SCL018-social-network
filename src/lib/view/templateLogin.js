@@ -1,5 +1,5 @@
-export const template = () => {
-// container principal
+export const homeLogin = () => {
+  // container principal
   const firstPage = document.createElement('div');
   firstPage.className = 'firstPage';
   firstPage.id = 'container';
@@ -27,23 +27,9 @@ export const template = () => {
     
         <img src = 'resources/google.png' class = 'google'>
     
-        <p> ¿No tienes  una cuenta? crea una cuenta </p> `;
+        ¿No tienes  una cuenta? 
+          <a href='#/count'> crea una cuenta </a>`;
   firstPage.appendChild(section1);
-
-  // section 2 - Página para crear cuenta
-  const section2 = document.createElement('section');
-  section2.className = 'createCount';
-  section2.id = 'createCount';
-  section2.innerHTML = `<input type='text' id='createName'  placeholder='Nombre de usuario'/>
-        <input type='email' id='createEmail' placeholder='Email' />
-        <input type='password' id='createPassword' placeholder='password' value='password'/>
-    
-        <input type='checkbox' id='conditions' value='check'/> <p> Acepto términos y condiciones </p>
-    
-        <button id = 'register' class= 'button'> Registrar </button>
-    
-        <p> ¿Ya tienes una cuenta? Inicia sesión </p> `;
-  firstPage.appendChild(section2);
 
   return firstPage;
 };
