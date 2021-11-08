@@ -8,13 +8,36 @@ import {
   signOut,
 } from 'https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js';
 
-import { app } from './index.html';
+// Import the functions you need from the SDKs you need
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.3.0/firebase-app.js';
 
+const firebaseConfig = {
+  apiKey: 'AIzaSyCNLaoS9p3z6_y0V06ggvzw2n6RQwrmt0A',
+  authDomain: 'concert-date.firebaseapp.com',
+  databaseURL: 'https://concert-date-default-rtdb.firebaseio.com',
+  projectId: 'concert-date',
+  storageBucket: 'concert-date.appspot.com',
+  messagingSenderId: '345481607594',
+  appId: '1:345481607594:web:060069248ceb9322ed93d3',
+  measurementId: 'G-433Q90N1LX',
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth();
+const provider = new GoogleAuthProvider(app);
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-const auth = getAuth();
-const provider = new GoogleAuthProvider(app);
+const user = auth.currentUser;
+
+if (user) {
+  // User is signed in, see docs for a list of available properties
+  // https://firebase.google.com/docs/reference/js/firebase.User
+  // ...
+} else {
+  // No user is signed in.
+}
 
 // registrarse en la app
 export const userRegister = () => {
@@ -71,7 +94,7 @@ export const loginWithGoogle = () => {
 
       // The signed-in user info.
       const user = result.user;
-      console.log("logged");
+      console.log('logged');
     })
     .catch((error) => {
       // Handle Errors here.

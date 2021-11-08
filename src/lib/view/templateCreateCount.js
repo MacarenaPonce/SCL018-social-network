@@ -17,12 +17,12 @@ export const createCount = () => {
   section2.className = 'createCount';
   section2.id = 'createCount';
   section2.innerHTML = `<input type='text' id='createName'  placeholder='Nombre de usuario'/>
-      <input type='email' id='createEmail' placeholder='Email' />
-      <input type='password' id='createPassword' placeholder='password' value='password'/>
+      <input type='email' id='mailRegister' placeholder='Email' />
+      <input type='password' id='passwordRegister' placeholder='password' value='password'/>
   
       <input type='checkbox' id='conditions' value='check'/> <p> Acepto términos y condiciones </p>
   
-      <button id = 'register' class= 'button'> Registrar </button>
+      <button id = 'btnRegister' class= 'button'> Registrar </button>
   
       ¿Ya tienes una cuenta? <a href='#/login'> Inicia sesión </a> `;
 
