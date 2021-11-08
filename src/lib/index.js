@@ -8,7 +8,7 @@ import {
   signOut,
 } from 'https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js';
 
-import { app } from './index.html';
+import { app } from '../index.html';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -71,7 +71,7 @@ export const loginWithGoogle = () => {
 
       // The signed-in user info.
       const user = result.user;
-      console.log("logged");
+      console.log('sesión iniciada');
     })
     .catch((error) => {
       // Handle Errors here.

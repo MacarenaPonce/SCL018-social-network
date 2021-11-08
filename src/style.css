@@ -4,9 +4,84 @@ body {
     background-color: rgba(28, 25, 26, 1);
     color:rgba(246, 231, 216, 1);
     font-family: 'Arimo', sans-serif;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
-#loginButton {
+header {
+    text-align: center;
+}
+
+section .login {
     display: flex;
     flex-flow: column;
+}
+
+.title1 {
+    width: 100%;
+}
+
+
+.input {
+    width: 261px;
+    height: 50px;
+    left: 57px; 
+    top: 362px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    font-family: 'Arimo', sans-serif;
+    margin-top: 10px;
+    padding-left: 20px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.google {
+    width: 10%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button {
+    width: 175px;
+    height: 50px;
+    left: 100px;
+    top: 546px;
+    background: #4C8A8A;
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    font-family: 'Arimo', sans-serif;
+    color: #E5E5E5;
+    font-size: medium;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.info {
+    font-size: 10px;
+    text-align: center;
+}
+
+@media screen and (min-width:1024px){
+    .title1 {
+        width: auto;
+    }
+
+    .info {
+        font-size: medium;
+    }
+
+    .google {
+        width: auto;
+    }
 }
