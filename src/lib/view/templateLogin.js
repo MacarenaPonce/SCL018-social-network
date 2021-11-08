@@ -17,11 +17,11 @@ export const homeLogin = () => {
   const section1 = document.createElement('section');
   section1.className = 'login';
   section1.innerHTML = ` <input type='text' id='name'  placeholder='Nombre de usuario'/>
-        <input type='email' id='email' placeholder='Email' />
-        <input type='password' id='password' placeholder='password' value='password'/>
+        <input type='email' id='mailLogin' placeholder='Email' />
+        <input type='password' id='passwordLogin' placeholder='password' value='password'/>
         </p> Olvidé mi contraseña </p>
     
-        <button id = 'go' class= 'button'> Ingresar </button>
+        <button id = 'btnLogin' class= 'button'> Ingresar </button>
     
         <p> O ingresa con </p>
     
