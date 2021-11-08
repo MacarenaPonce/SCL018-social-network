@@ -6,6 +6,11 @@ body {
     font-family: 'Arimo', sans-serif;
 }
 
+.firstPage {
+    display: grid;
+    grid-template-rows: 2;
+}
+
 #loginButton {
     display: flex;
     flex-flow: column;
