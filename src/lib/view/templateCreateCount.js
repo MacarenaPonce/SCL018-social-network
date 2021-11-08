@@ -1,3 +1,5 @@
+// import { userRegister } from '../index.js';
+
 export const createCount = () => {
   const secondPage = document.createElement('div');
   secondPage.className = 'second-page';
@@ -27,6 +29,10 @@ export const createCount = () => {
       ¿Ya tienes una cuenta? <a href='#/login'> Inicia sesión </a> `;
 
   secondPage.appendChild(section2);
+
+  /* document.querySelector('#btnRegister').addEventListener('click', () => {
+    userRegister();
+  }); */
 
   return secondPage;
 };

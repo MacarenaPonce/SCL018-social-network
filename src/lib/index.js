@@ -8,8 +8,7 @@ import {
   signOut,
 } from 'https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js';
 
-// Import the functions you need from the SDKs you need
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.3.0/firebase-app.js';
+import { app } from '../index.html';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCNLaoS9p3z6_y0V06ggvzw2n6RQwrmt0A',
@@ -94,7 +93,7 @@ export const loginWithGoogle = () => {
 
       // The signed-in user info.
       const user = result.user;
-      console.log('logged');
+      console.log('sesión iniciada');
     })
     .catch((error) => {
       // Handle Errors here.
