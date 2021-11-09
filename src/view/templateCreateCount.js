@@ -30,7 +30,7 @@ export const createCount = () => {
 
   secondPage.appendChild(section2);
 
-section2.querySelector('#btnRegister').addEventListener('click', () => {
+  section2.querySelector('#btnRegister').addEventListener('click', () => {
     userRegister();
   });
 

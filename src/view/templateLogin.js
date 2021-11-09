@@ -1,6 +1,6 @@
-import { userLogin } from '../lib/index.js'
+import { userLogin, loginWithGoogle } from '../lib/index.js';
 
-const homeLogin = () => {
+export const homeLogin = () => {
   // container principal
   const firstPage = document.createElement('div');
   firstPage.className = 'firstPage';
@@ -29,18 +29,16 @@ const homeLogin = () => {
         <button id="googleLogin"> <img src = 'resources/google.png' class = 'google'> </button>
     
         <p class='info'> ¿No tienes  una cuenta? <a href='#/count'> crea una cuenta </a> </p>`;
-  
-firstPage.appendChild(section1);
 
-section1.querySelector('#btnLogin').addEventListener('click', () => {
+  firstPage.appendChild(section1);
+
+  section1.querySelector('#btnLogin').addEventListener('click', () => {
     userLogin();
   });
 
-
+  section1.querySelector('#googleLogin').addEventListener('click', () => {
+    loginWithGoogle();
+  });
 
   return firstPage;
 };
-
-
-export default homeLogin 
-
