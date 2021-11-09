@@ -1,4 +1,4 @@
-// import { userRegister } from '../index.js';
+import { userRegister } from '../index.js';
 
 export const createCount = () => {
   const secondPage = document.createElement('div');
@@ -30,9 +30,9 @@ export const createCount = () => {
 
   secondPage.appendChild(section2);
 
-  /* document.querySelector('#btnRegister').addEventListener('click', () => {
+  document.querySelector('#btnRegister').addEventListener('click', () => {
     userRegister();
-  }); */
+  });
 
   return secondPage;
 };
