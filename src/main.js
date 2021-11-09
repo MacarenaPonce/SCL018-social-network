@@ -1,4 +1,3 @@
-import { myFunction } from './lib/index.js';
 import { homeLogin } from './lib/view/templateLogin.js';
 import { changeRoute } from './lib/router.js';
 
@@ -6,7 +5,6 @@ document.getElementById('root').appendChild(homeLogin());
 
 const init = () => {
   window.addEventListener('hashchange', () => {
-    myFunction();
     console.log(window.location.hash);
     changeRoute(window.location.hash);
   });
