@@ -1,4 +1,5 @@
-import { homeLogin } from './lib/view/templateLogin.js';
+import { homeLogin } from './DOM/templateLogins.js';
+
 import { changeRoute } from './lib/router.js';
 
 document.getElementById('root').appendChild(homeLogin());

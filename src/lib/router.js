@@ -1,5 +1,5 @@
-import { homeLogin } from './view/templateLogin.js';
-import { createCount } from './view/templateCreateCount.js';
+import { homeLogin } from '../DOM/templateLogin.js';
+import { createCount } from '../DOM/templateCreateCount.js';
 
 const showTemplete = (hash) => {
   const containerRoot = document.getElementById('root');

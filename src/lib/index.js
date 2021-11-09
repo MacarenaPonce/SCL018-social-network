@@ -1,3 +1,4 @@
+// Import the functions you need from the SDKs you need
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -6,29 +7,15 @@ import {
   signInWithRedirect,
   getRedirectResult,
   signOut,
-} from 'https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js';
+} from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js';
 
-import { app } from '../index.html';
-
-const firebaseConfig = {
-  apiKey: 'AIzaSyCNLaoS9p3z6_y0V06ggvzw2n6RQwrmt0A',
-  authDomain: 'concert-date.firebaseapp.com',
-  databaseURL: 'https://concert-date-default-rtdb.firebaseio.com',
-  projectId: 'concert-date',
-  storageBucket: 'concert-date.appspot.com',
-  messagingSenderId: '345481607594',
-  appId: '1:345481607594:web:060069248ceb9322ed93d3',
-  measurementId: 'G-433Q90N1LX',
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth();
+import { app } from '../lib/firebaseConfig.js'
+// const analytics = getAnalytics(app);
+const auth = getAuth(app);
+console.log(app);
 const provider = new GoogleAuthProvider(app);
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-const user = auth.currentUser;
+/* const user = auth.currentUser;
 
 if (user) {
   // User is signed in, see docs for a list of available properties
@@ -36,12 +23,11 @@ if (user) {
   // ...
 } else {
   // No user is signed in.
-}
+} */
 
 // registrarse en la app
 export const userRegister = () => {
-  document.querySelector('#btnRegister').addEventListener('click', () => {
-    // const name = document.getElementById("nameRegister").value;
+  //según buenas prácticas, estas 2 lineas deben estar en template
     const email = document.getElementById('mailRegister').value;
     const password = document.getElementById('passwordRegister').value;
 
@@ -58,12 +44,11 @@ export const userRegister = () => {
         // ..
         console.log(errorCode + errorMessage);
       });
-  });
 };
 
 // iniciar sesión con correo
 export const userLogin = () => {
-  document.querySelector('#btnLogin').addEventListener('click', () => {
+  //según buenas prácticas, estas 2 lineas deben estar en template
     const email1 = document.getElementById('mailLogin').value;
     const password1 = document.getElementById('passwordLogin').value;
 
@@ -72,15 +57,14 @@ export const userLogin = () => {
         // Signed in
         const user = userCredential.user;
         // ...
-        console.log('acceso autorizado');
+        console.log('acceso autorizado'); 
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode + errorMessage);
       });
-  });
-};
+  };
 
 // iniciar sesión con google
 export const loginWithGoogle = () => {
@@ -108,6 +92,7 @@ export const loginWithGoogle = () => {
     });
 };
 
+// cerrar sesión
 signOut(auth).then(() => {
   // Sign-out successful.
 }).catch((error) => {
