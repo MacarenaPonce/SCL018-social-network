@@ -18,15 +18,15 @@ export const createCount = () => {
   const section2 = document.createElement('section');
   section2.className = 'createCount';
   section2.id = 'createCount';
-  section2.innerHTML = `<input type='text' id='createName'  placeholder='Nombre de usuario'/>
-      <input type='email' id='mailRegister' placeholder='Email' />
-      <input type='password' id='passwordRegister' placeholder='password' value='password'/>
+  section2.innerHTML = `<input type='text' id='createName' class = 'input' placeholder='Nombre de usuario'/>
+      <input type='email' id='mailRegister' class = 'input'  placeholder='Email' />
+      <input type='password' id='passwordRegister' class = 'input' placeholder='password' value='password'/>
   
-      <input type='checkbox' id='conditions' value='check'/> <p> Acepto términos y condiciones </p>
+      <p class = 'info'>  <input type='checkbox' class = 'info' class= 'disabled' id='conditions' value='check'/> Acepto términos y condiciones </p>
   
       <button id = 'btnRegister' class= 'button'> Registrar </button>
   
-      ¿Ya tienes una cuenta? <a href='#/login'> Inicia sesión </a> `;
+     <p class= 'info'> ¿Ya tienes una cuenta? <a href='#/login'> Inicia sesión </a> </p>`;
 
   secondPage.appendChild(section2);
 

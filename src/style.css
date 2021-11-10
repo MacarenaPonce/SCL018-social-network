@@ -2,7 +2,7 @@
 
 body {
     background-color: rgba(28, 25, 26, 1);
-    color:rgba(246, 231, 216, 1);
+    color:rgb(240, 212, 185);
     font-family: 'Arimo', sans-serif;
     margin-left: 10%;
     margin-right: 10%;
@@ -12,7 +12,7 @@ header {
     text-align: center;
 }
 
-.firstPage {
+.firstPage .second-page {
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -35,7 +35,7 @@ header {
     backdrop-filter: blur(4px);
     border-radius: 10px;
     font-family: 'Arimo', sans-serif;
-    margin-top: 10px;
+    margin-top: 15px;
     padding-left: 20px;
     display: block;
     margin-left: auto;
@@ -43,7 +43,7 @@ header {
 }
 
 .google {
-    width: 10%;
+    width: 90%;
     margin-top: 20px;
     margin-bottom: 20px;
     display: block;
@@ -66,15 +66,28 @@ header {
     top: 546px;
     background: #4C8A8A;
     backdrop-filter: blur(4px);
+    border: none;
     border-radius: 10px;
     font-family: 'Arimo', sans-serif;
-    color: #E5E5E5;
+    color: rgb(240, 212, 185);
     font-size: medium;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
     display: block;
     margin-right: auto;
     margin-left: auto;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.button:hover {
+    background-color: #FFFFFF; 
+    color: #4C8A8A;
 }
 
 .info {
@@ -90,11 +103,21 @@ header {
 
     }
 
+    .second-page {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
     head {
         grid-column-start:1;
     }
 
     .login {
+        margin-top: 30%;
+        grid-column-start: 2;
+    }
+
+    .createCount {
         margin-top: 30%;
         grid-column-start: 2;
     }
