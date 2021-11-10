@@ -1,8 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@600&display=swap');
 
+html { 
+    box-sizing: border-box;
+}
+*, *:before, *::after {
+    box-sizing: inherit;
+}
+
+li {
+    list-style: none;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0; 
+}
+
+a {
+    text-decoration: none;
+}
+
 body {
     background-color: rgba(28, 25, 26, 1);
-    color:rgba(246, 231, 216, 1);
+    color:rgb(240, 212, 185);
     font-family: 'Arimo', sans-serif;
     margin-left: 10%;
     margin-right: 10%;
@@ -12,7 +33,7 @@ header {
     text-align: center;
 }
 
-.firstPage {
+.firstPage .second-page {
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -35,7 +56,7 @@ header {
     backdrop-filter: blur(4px);
     border-radius: 10px;
     font-family: 'Arimo', sans-serif;
-    margin-top: 10px;
+    margin-top: 15px;
     padding-left: 20px;
     display: block;
     margin-left: auto;
@@ -43,12 +64,20 @@ header {
 }
 
 .google {
-    width: 10%;
+    width: 90%;
     margin-top: 20px;
     margin-bottom: 20px;
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+#googleLogin {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    background-color: transparent;
 }
 
 .button {
@@ -58,20 +87,110 @@ header {
     top: 546px;
     background: #4C8A8A;
     backdrop-filter: blur(4px);
+    border: none;
     border-radius: 10px;
     font-family: 'Arimo', sans-serif;
-    color: #E5E5E5;
+    color: rgb(240, 212, 185);
     font-size: medium;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
     display: block;
     margin-right: auto;
     margin-left: auto;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.icon {
+    width: 12%;
+}
+
+.logo {
+    width: 50%;
+}
+
+.button:hover {
+    background-color: #FFFFFF; 
+    color: #4C8A8A;
 }
 
 .info {
     font-size: 10px;
     text-align: center;
+}
+
+#btnPublish{
+    position: fixed;
+    bottom: 30px;
+    right: 17px;
+    margin-bottom: 10%;
+}
+
+.options {
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.options a {
+    padding: 1rem;
+    display: block;
+}
+
+@media (min-width:768px) {
+
+    .options {
+        flex-direction: column;
+    }
+}
+
+.link {
+    overflow: hidden;
+}
+
+.link:target .submenu {
+    max-height: 300px;
+}
+
+@media (min-width:768px) {
+
+    .link {
+        flex: 1;
+        position: relative;
+        overflow: visible;
+    }
+
+    .link .submenu {
+        position: absolute;
+        width: 100%;
+    }
+}
+
+.submenu {
+    background-color: rgb(240, 212, 185);
+    max-height: 0;
+    transition: .8s;
+}
+
+@media (min-width:768px) {
+
+    .submenu a {
+        display: none;
+    }
+
+    .link:target .submenu a {
+        display: block;
+    }
+}
+
+.submenu a:hover {
+    background-color: rgb(240, 212, 185);
+}
+
+
+#post {
+    background-color: #FFFFFF;
 }
 
 @media screen and (min-width:630px){
@@ -82,11 +201,21 @@ header {
 
     }
 
+    .second-page {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
     head {
         grid-column-start:1;
     }
 
     .login {
+        margin-top: 30%;
+        grid-column-start: 2;
+    }
+
+    .createCount {
         margin-top: 30%;
         grid-column-start: 2;
     }

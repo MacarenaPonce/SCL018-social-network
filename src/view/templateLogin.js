@@ -1,3 +1,5 @@
+import { userLogin, loginWithGoogle } from '../lib/index.js';
+
 export const homeLogin = () => {
   // container principal
   const firstPage = document.createElement('div');
@@ -20,14 +22,23 @@ export const homeLogin = () => {
         <input type='password' class= 'input' id='passwordLogin' placeholder='password' value='password'/>
         <p class = 'info'> Olvidé mi contraseña </p>
     
-        <button id = 'btnLogin' class= 'button'> Ingresar </button>
+       <a href='#/timeLine'> <button id = 'btnLogin' class= 'button'> Ingresar </button> </a>
     
         <p class = 'info'> O ingresa con </p>
     
-        <img src = 'resources/google.png' class = 'google'>
+        <button id="googleLogin"> <img src = 'resources/google.png' class = 'google'> </button>
     
-        <p class='info'> ¿No tienes  una cuenta? <a href='#/count'> crea una cuenta </a> </p>`;
+        <p class='info'> ¿No tienes  una cuenta? <a href='#/count'> Crea una cuenta </a> </p>`;
+
   firstPage.appendChild(section1);
+
+  section1.querySelector('#btnLogin').addEventListener('click', () => {
+    userLogin();
+  });
+
+  section1.querySelector('#googleLogin').addEventListener('click', () => {
+    loginWithGoogle();
+  });
 
   return firstPage;
 };
