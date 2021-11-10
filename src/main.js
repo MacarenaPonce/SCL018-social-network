@@ -1,4 +1,4 @@
-import { homeLogin } from './DOM/templateLogins.js';
+import { homeLogin } from './view/templateLogin.js';
 
 import { changeRoute } from './lib/router.js';
 
