@@ -27,7 +27,9 @@ export const userRegister = () => {
       // Signed in
       const user = userCredential.user;
       // ...
+      alert('Registro exitoso');
       console.log('usuario creado');
+     /*  window.location.hash = "#/login"; */
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -49,10 +51,12 @@ export const userLogin = () => {
       const user = userCredential.user;
       // ...
       console.log('acceso autorizado');
+      /* window.location.hash = "#/timeLine" */
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
+      alert('Datos inválidos');
       console.log(errorCode + errorMessage);
     });
 };
@@ -68,6 +72,7 @@ export const loginWithGoogle = () => {
 
       // The signed-in user info.
       const user = result.user;
+      alert('Inicio de sesión exitosa');
       console.log('sesión iniciada');
     })
     .catch((error) => {
