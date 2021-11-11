@@ -9,12 +9,15 @@ import {
   signOut,
 } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js';
 
+import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js';
+
 import { app } from './firebaseConfig.js';
 
 // const analytics = getAnalytics(app);
 const auth = getAuth(app);
 console.log(app);
 const provider = new GoogleAuthProvider(app);
+const db = getFirestore();
 
 // registrarse en la app
 export const userRegister = () => {
@@ -83,9 +86,9 @@ export const loginWithGoogle = () => {
     });
 };
 
-// cerrar sesión
-signOut(auth).then(() => {
+/* cerrar sesión
+export const signOut(auth).then(() => {
   // Sign-out successful.
 }).catch((error) => {
   // An error happened.
-});
+}); */
