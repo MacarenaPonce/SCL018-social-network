@@ -29,12 +29,13 @@ export const userRegister = () => {
       // ...
       alert('Registro exitoso');
       console.log('usuario creado');
-     /*  window.location.hash = "#/login"; */
+      window.location.hash = '#/timeLine';
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       // ..
+      alert(errorCode + errorMessage);
       console.log(errorCode + errorMessage);
     });
 };
@@ -50,14 +51,16 @@ export const userLogin = () => {
       // Signed in
       const user = userCredential.user;
       // ...
+      alert('acceso autorizado');
       console.log('acceso autorizado');
-      /* window.location.hash = "#/timeLine" */
+      window.location.hash = '#/timeLine';
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      alert('Datos inválidos');
+      alert(errorCode + errorMessage);
       console.log(errorCode + errorMessage);
+      window.location.hash = '#/login';
     });
 };
 
@@ -73,6 +76,7 @@ export const loginWithGoogle = () => {
       // The signed-in user info.
       const user = result.user;
       alert('Inicio de sesión exitosa');
+      window.location.hash = '#/timeLine';
       console.log('sesión iniciada');
     })
     .catch((error) => {
@@ -90,6 +94,7 @@ export const loginWithGoogle = () => {
 
 // cerrar sesión
 signOut(auth).then(() => {
+  window.location.hash = '#/login';
   // Sign-out successful.
 }).catch((error) => {
   // An error happened.
