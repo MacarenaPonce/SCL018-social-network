@@ -22,13 +22,13 @@ export const homeLogin = () => {
         <input type='password' class= 'input' id='passwordLogin' placeholder='password' value='password'/>
         <p class = 'info'> Olvidé mi contraseña </p>
     
-        <button id = 'btnLogin' class= 'button'> Ingresar </button>
+       <a href='#/timeLine'> <button id = 'btnLogin' class= 'button'> Ingresar </button> </a>
     
         <p class = 'info'> O ingresa con </p>
     
         <button id="googleLogin"> <img src = 'resources/google.png' class = 'google'> </button>
     
-        <p class='info'> ¿No tienes  una cuenta? <a href='#/count'> crea una cuenta </a> </p>`;
+        <p class='info'> ¿No tienes  una cuenta? <a href='#/count'> Crea una cuenta </a> </p>`;
 
   firstPage.appendChild(section1);
 

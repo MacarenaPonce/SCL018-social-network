@@ -83,9 +83,9 @@ export const loginWithGoogle = () => {
     });
 };
 
-/* cerrar sesión
+// cerrar sesión
 signOut(auth).then(() => {
   // Sign-out successful.
 }).catch((error) => {
   // An error happened.
-}); */
+});
