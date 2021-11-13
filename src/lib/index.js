@@ -29,7 +29,7 @@ export const userRegister = () => {
       // ...
       alert('Registro exitoso');
       console.log('usuario creado');
-      window.location.hash = '#/timeLine';
+      window.location.hash = '#/login';
     })
     .catch((error) => {
       const errorCode = error.code;
