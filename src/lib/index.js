@@ -29,21 +29,21 @@ export const userRegister = () => {
       // ...
       alert('Registro exitoso');
       console.log('usuario creado');
-<<<<<<< HEAD
+
       window.location.hash = "#/timeLine";
-=======
+
       window.location.hash = '#/timeLine';
->>>>>>> 3e329ff3c0951c04fdcdb83ec8c59ec1e905649e
+
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       // ..
-<<<<<<< HEAD
+
       alert(errorCode+errorMessage);  
-=======
+
       alert(errorCode + errorMessage);
->>>>>>> 3e329ff3c0951c04fdcdb83ec8c59ec1e905649e
+
       console.log(errorCode + errorMessage);
     });
 };
@@ -61,11 +61,11 @@ export const userLogin = () => {
       // ...
       alert('acceso autorizado');
       console.log('acceso autorizado');
-<<<<<<< HEAD
+
       window.location.hash = "#/timeLine"
-=======
+
       window.location.hash = '#/timeLine';
->>>>>>> 3e329ff3c0951c04fdcdb83ec8c59ec1e905649e
+
     })
     .catch((error) => {
       const errorCode = error.code;
