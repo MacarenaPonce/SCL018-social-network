@@ -1,6 +1,7 @@
 // import { homeLogin } from './view/templateLogin.js';
 
 import { routes } from './lib/router.js';
+// import { authChanged } from './lib/index.js';
 
 /* document.getElementById('root').appendChild(homeLogin());
 
@@ -21,3 +22,7 @@ window.addEventListener('load', () => {
 window.addEventListener('hashchange', () => {
   routes(window.location.hash);
 });
+
+/* window.addEventListener('load', () => {
+  authChanged();
+}); */

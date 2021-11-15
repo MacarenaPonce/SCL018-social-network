@@ -1,4 +1,5 @@
 // import función para muro??
+import { exit } from '../lib/index.js';
 
 export const timeLine = () => {
   const quarterPage = document.createElement('div');
@@ -18,20 +19,17 @@ export const timeLine = () => {
   const nav = document.createElement('nav');
   nav.className = 'wall-nav';
   nav.innerHTML = `<ul class = 'options'>
-    <li class='link' > 
-      <i class='fas fa-users'></i> <img src ='resources/profile.png'>
-    <div class='submenu' id='profileMenu'>
-      <a href='#'> <img src ='resources/edit.png' class = 'minIcon'>  Editar perfil </a>
-      <a href='#'> <img src ='resources/sign-out.png' id = 'logOut' class = 'minIcon'> Cerrar sesión </a>
-    </div>
-    </li>
-    <li class='link'>
-   <img src ='resources/search.png' class = 'icon'>
-    </li>
-    <li class= 'link'>
-    <img src ='resources/calendar.png' class = 'icon'> 
-    </li>
+   <li> <a href='#1'> <img src ='resources/profile.png' id='profile'> </a>
+    <ul>
+      <li> <a href='#1'> <img src ='resources/edit.png' class = 'minIcon' id='edit'>  Editar perfil </a> </li>
+      <li> <a href='#1'> <img src ='resources/sign-out.png' class = 'minIcon'> Cerrar sesión </a> </li>
     </ul>
+    </li>
+    <li> <a href='#1'> <img src ='resources/search.png' class = 'icon'> </a> </li> 
+    <li> <a href='#1'> <img src ='resources/calendar.png' class = 'icon'> </a> </li> 
+    </ul>
+
+    <button id='logOut'> <img src ='resources/sign-out.png' class = 'minIcon'> </button>
 
      `;
   quarterPage.appendChild(nav);
@@ -50,9 +48,11 @@ export const timeLine = () => {
   <a href='#/post'> <button id="btnPublish"> <img src = 'resources/post.png'> </button> </a>`;
   quarterPage.appendChild(section4);
 
-  /* section4.querySelector('#logOut').addEventListener('click', () => {
-      signOut();
-    }); */
+  const logOut = nav.querySelector('#logOut');
+  logOut.addEventListener('click', (e) => {
+    e.preventDefault();
+    exit();
+  });
 
   return quarterPage;
 };
