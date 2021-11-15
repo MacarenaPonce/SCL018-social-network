@@ -6,6 +6,7 @@ import {
   GoogleAuthProvider,
   signInWithRedirect,
   getRedirectResult,
+  onAuthStateChanged,
   signOut,
 } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js';
 
@@ -92,10 +93,29 @@ export const loginWithGoogle = () => {
     });
 };
 
+export const authChanged = () => {
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+      const uid = user.uid;
+      console.log(uid);
+    // ...
+    } else {
+      console.log('user is signed out');
+      window.location.hash = '#/login';
+    // User is signed out
+    // ...
+    }
+  });
+};
+
 // cerrar sesión
-signOut(auth).then(() => {
-  window.location.hash = '#/login';
+export const exit = () => {
+  signOut(auth).then(() => {
+    window.location.hash = '#/login';
   // Sign-out successful.
-}).catch((error) => {
+  }).catch((error) => {
   // An error happened.
-});
+  });
+};
