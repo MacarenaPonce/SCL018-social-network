@@ -29,12 +29,13 @@ export const userRegister = () => {
       // ...
       alert('Registro exitoso');
       console.log('usuario creado');
-     /*  window.location.hash = "#/login"; */
+      window.location.hash = "#/timeLine";
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       // ..
+      alert(errorCode+errorMessage);  
       console.log(errorCode + errorMessage);
     });
 };
@@ -51,7 +52,7 @@ export const userLogin = () => {
       const user = userCredential.user;
       // ...
       console.log('acceso autorizado');
-      /* window.location.hash = "#/timeLine" */
+      window.location.hash = "#/timeLine"
     })
     .catch((error) => {
       const errorCode = error.code;
