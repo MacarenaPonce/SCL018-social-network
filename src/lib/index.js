@@ -6,7 +6,6 @@ import {
   GoogleAuthProvider,
   signInWithRedirect,
   getRedirectResult,
-  onAuthStateChanged,
   sendEmailVerification,
   signOut,
 } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js';
@@ -104,7 +103,7 @@ export const loginWithGoogle = () => {
     });
 };
 
-// auth changed
+/* auth changed
 export const authChanged = () => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -117,7 +116,7 @@ export const authChanged = () => {
       window.location.hash = '#/login';
     }
   });
-};
+}; */
 
 // cerrar sesión
 export const exit = () => {
