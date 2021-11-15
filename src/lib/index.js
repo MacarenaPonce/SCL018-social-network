@@ -1,4 +1,5 @@
 // Import the functions you need from the SDKs you need
+//15-11
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -41,12 +42,21 @@ export const userRegister = () => {
       console.log('usuario creado');
       sendEmail();
       window.location.hash = '#/login';
+
+
+      window.location.hash = "#/timeLine";
+
+      window.location.hash = '#/timeLine';
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       // ..
+
+      alert(errorCode+errorMessage);  
+
       alert(errorCode + errorMessage);
+
       console.log(errorCode + errorMessage);
     });
 };
@@ -64,7 +74,11 @@ export const userLogin = () => {
       // ...
       alert('acceso autorizado');
       console.log('acceso autorizado');
+
+      window.location.hash = "#/timeLine"
+
       window.location.hash = '#/timeLine';
+
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -119,6 +133,7 @@ export const authChanged = () => {
 }; */
 
 // cerrar sesión
+
 export const exit = () => {
   signOut(auth).then(() => {
     window.location.hash = '#/login';
@@ -127,3 +142,10 @@ export const exit = () => {
     // An error happened.
   });
 };
+
+signOut(auth).then(() => {
+  window.location.hash = '#/login';
+  // Sign-out successful.
+}).catch((error) => {
+  // An error happened.
+});
