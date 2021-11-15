@@ -1,8 +1,8 @@
-import { homeLogin } from './view/templateLogin.js';
+// import { homeLogin } from './view/templateLogin.js';
 
-import { changeRoute } from './lib/router.js';
+import { routes } from './lib/router.js';
 
-document.getElementById('root').appendChild(homeLogin());
+/* document.getElementById('root').appendChild(homeLogin());
 
 const init = () => {
   window.addEventListener('hashchange', () => {
@@ -11,4 +11,13 @@ const init = () => {
   });
 };
 
-window.addEventListener('load', init);
+window.addEventListener('load', init); */
+
+window.addEventListener('load', () => {
+  // onAuth();
+  routes(window.location.hash);
+});
+
+window.addEventListener('hashchange', () => {
+  routes(window.location.hash);
+});

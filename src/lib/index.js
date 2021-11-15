@@ -29,13 +29,21 @@ export const userRegister = () => {
       // ...
       alert('Registro exitoso');
       console.log('usuario creado');
+<<<<<<< HEAD
       window.location.hash = "#/timeLine";
+=======
+      window.location.hash = '#/timeLine';
+>>>>>>> 3e329ff3c0951c04fdcdb83ec8c59ec1e905649e
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       // ..
+<<<<<<< HEAD
       alert(errorCode+errorMessage);  
+=======
+      alert(errorCode + errorMessage);
+>>>>>>> 3e329ff3c0951c04fdcdb83ec8c59ec1e905649e
       console.log(errorCode + errorMessage);
     });
 };
@@ -51,14 +59,20 @@ export const userLogin = () => {
       // Signed in
       const user = userCredential.user;
       // ...
+      alert('acceso autorizado');
       console.log('acceso autorizado');
+<<<<<<< HEAD
       window.location.hash = "#/timeLine"
+=======
+      window.location.hash = '#/timeLine';
+>>>>>>> 3e329ff3c0951c04fdcdb83ec8c59ec1e905649e
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      alert('Datos inválidos');
+      alert(errorCode + errorMessage);
       console.log(errorCode + errorMessage);
+      window.location.hash = '#/login';
     });
 };
 
@@ -74,6 +88,7 @@ export const loginWithGoogle = () => {
       // The signed-in user info.
       const user = result.user;
       alert('Inicio de sesión exitosa');
+      window.location.hash = '#/timeLine';
       console.log('sesión iniciada');
     })
     .catch((error) => {
@@ -91,6 +106,7 @@ export const loginWithGoogle = () => {
 
 // cerrar sesión
 signOut(auth).then(() => {
+  window.location.hash = '#/login';
   // Sign-out successful.
 }).catch((error) => {
   // An error happened.

@@ -19,6 +19,7 @@ ul {
 
 a {
     text-decoration: none;
+    color:#4C8A8A;
 }
 
 body {
@@ -131,61 +132,6 @@ header {
     max-width: 1200px;
     display: flex;
     flex-direction: column;
-}
-
-.options a {
-    padding: 1rem;
-    display: block;
-}
-
-@media (min-width:768px) {
-
-    .options {
-        flex-direction: column;
-    }
-}
-
-.link {
-    overflow: hidden;
-}
-
-.link:target .submenu {
-    max-height: 300px;
-}
-
-@media (min-width:768px) {
-
-    .link {
-        flex: 1;
-        position: relative;
-        overflow: visible;
-    }
-
-    .link .submenu {
-        position: absolute;
-        width: 100%;
-    }
-}
-
-.submenu {
-    background-color: rgb(240, 212, 185);
-    max-height: 0;
-    transition: .8s;
-}
-
-@media (min-width:768px) {
-
-    .submenu a {
-        display: none;
-    }
-
-    .link:target .submenu a {
-        display: block;
-    }
-}
-
-.submenu a:hover {
-    background-color: rgb(240, 212, 185);
 }
 
 
