@@ -22,7 +22,7 @@ export const timeLine = () => {
       <i class='fas fa-users'></i> <img src ='resources/profile.png'>
     <div class='submenu' id='profileMenu'>
       <a href='#'> <img src ='resources/edit.png' class = 'minIcon'>  Editar perfil </a>
-      <a href='#'> <img src ='resources/sign-out.png' class = 'minIcon'> Cerrar sesión </a>
+      <a href='#'> <img src ='resources/sign-out.png' id = 'logOut' class = 'minIcon'> Cerrar sesión </a>
     </div>
     </li>
     <li class='link'>
@@ -36,28 +36,7 @@ export const timeLine = () => {
      `;
   quarterPage.appendChild(nav);
 
-  /* const profile = document.createElement('img');
-  profile.className = 'icon';
-  profile.src = 'resources/profile.png';
-  profile.
-  header.appendChild(profile);
-
-  const calendar = document.createElement('img');
-  calendar.className = 'icon';
-  calendar.src = 'resources/calendar.png';
-  header.appendChild(calendar);
-
-  const search = document.createElement('img');
-  search.className = 'icon';
-  search.src = 'resources/search.png';
-  header.appendChild(search);
-
-  const text = document.createElement('title');
-  text.className = 'title';
-  text.innerHTML = '<h1> Publicar </h1>';
-  header.appendChild(text); */
-
-  // section 3 - Página para crear un publicación
+  // section 4 - Página para crear un publicación
   const section4 = document.createElement('section');
   section4.className = 'post';
   section4.id = 'post';
@@ -71,8 +50,8 @@ export const timeLine = () => {
   <a href='#/post'> <button id="btnPublish"> <img src = 'resources/post.png'> </button> </a>`;
   quarterPage.appendChild(section4);
 
-  /* section3.querySelector('#btnPublish').addEventListener('click', () => {
-      ...();
+  /* section4.querySelector('#logOut').addEventListener('click', () => {
+      signOut();
     }); */
 
   return quarterPage;
