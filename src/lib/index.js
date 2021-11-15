@@ -1,4 +1,5 @@
 // Import the functions you need from the SDKs you need
+//15-11
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -29,13 +30,14 @@ export const userRegister = () => {
       // ...
       alert('Registro exitoso');
       console.log('usuario creado');
-      window.location.hash = '#/login';
+      window.location.hash = '#/timeLine';
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       // ..
-      alert(errorCode + errorMessage);
+
+      alert(errorCode+errorMessage); 
       console.log(errorCode + errorMessage);
     });
 };
@@ -53,6 +55,7 @@ export const userLogin = () => {
       // ...
       alert('acceso autorizado');
       console.log('acceso autorizado');
+
       window.location.hash = '#/timeLine';
     })
     .catch((error) => {
