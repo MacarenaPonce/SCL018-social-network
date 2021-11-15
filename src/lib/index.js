@@ -7,6 +7,7 @@ import {
   signInWithRedirect,
   getRedirectResult,
   onAuthStateChanged,
+  sendEmailVerification,
   signOut,
 } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js';
 
@@ -16,6 +17,15 @@ import { app } from './firebaseConfig.js';
 const auth = getAuth(app);
 console.log(app);
 const provider = new GoogleAuthProvider(app);
+
+// send Email verification
+export const sendEmail = () => {
+  sendEmailVerification(auth.currentUser)
+    .then(() => {
+      // Email verification sent!
+      // ...
+    });
+};
 
 // registrarse en la app
 export const userRegister = () => {
@@ -30,6 +40,7 @@ export const userRegister = () => {
       // ...
       alert('Registro exitoso');
       console.log('usuario creado');
+      sendEmail();
       window.location.hash = '#/login';
     })
     .catch((error) => {
@@ -76,9 +87,9 @@ export const loginWithGoogle = () => {
 
       // The signed-in user info.
       const user = result.user;
+      console.log(user);
       alert('Inicio de sesión exitosa');
       window.location.hash = '#/timeLine';
-      console.log('sesión iniciada');
     })
     .catch((error) => {
       // Handle Errors here.
@@ -93,19 +104,17 @@ export const loginWithGoogle = () => {
     });
 };
 
+// auth changed
 export const authChanged = () => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
       const uid = user.uid;
       console.log(uid);
-    // ...
+      console.log('usuario logueado');
+      // ...
     } else {
       console.log('user is signed out');
       window.location.hash = '#/login';
-    // User is signed out
-    // ...
     }
   });
 };
@@ -114,8 +123,8 @@ export const authChanged = () => {
 export const exit = () => {
   signOut(auth).then(() => {
     window.location.hash = '#/login';
-  // Sign-out successful.
+    // Sign-out successful.
   }).catch((error) => {
-  // An error happened.
+    // An error happened.
   });
 };
