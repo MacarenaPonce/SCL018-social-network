@@ -1,4 +1,4 @@
-import { userLogin, loginWithGoogle, profileInit } from '../lib/index.js';
+import { userLogin, loginWithGoogle } from '../lib/index.js';
 
 export const homeLogin = () => {
   // container principal
@@ -34,12 +34,10 @@ export const homeLogin = () => {
 
   section1.querySelector('#btnLogin').addEventListener('click', () => {
     userLogin();
-    profileInit();
   });
 
   section1.querySelector('#googleLogin').addEventListener('click', () => {
     loginWithGoogle();
-    profileInit();
   });
 
   return firstPage;

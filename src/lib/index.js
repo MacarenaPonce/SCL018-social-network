@@ -48,7 +48,7 @@ export const userRegister = () => {
       const errorCode = error.code;
       const errorMessage = error.message;
       // ..
-      alert(errorCode + errorMessage);
+      alert(errorMessage);
       console.log(errorCode + errorMessage);
     });
 };
@@ -71,7 +71,7 @@ export const userLogin = () => {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      alert(errorCode + errorMessage);
+      alert(errorMessage);
       console.log(errorCode + errorMessage);
       window.location.hash = '#/login';
     });
@@ -107,10 +107,10 @@ export const loginWithGoogle = () => {
 export const authChanged = () => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      const currentUser = user;
+      const userData = user;
       const uid = user.uid;
-      console.log('usuario logueado', currentUser);
-      alert('Bienvenide', currentUser.displayName);
+      console.log('usuario logueado', userData.displayName);
+      alert('Bienvenide', userData.displayName);
       profileInit();
       // ...
     } else {
