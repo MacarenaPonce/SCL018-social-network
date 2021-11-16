@@ -39,7 +39,7 @@ export const userRegister = () => {
       alert('Registro exitoso, ahora puedes iniciar sesión');
       console.log('usuario creado', user);
       // sendEmail();
-      // window.location.hash = '#/login';
+      window.location.hash = '#/login';
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -59,8 +59,7 @@ export const userLogin = () => {
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
-      currentUser = user;
-      // window.location.hash = '#/timeLine';
+      window.location.hash = '#/timeLine';
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -97,7 +96,7 @@ export const loginWithGoogle = () => {
 // element profile user
 export const profileInit = (user) => {
   const userInfo = document.querySelector('#userInfo');
-  userInfo.innerHTML = `Hola ${user.displayName || 'Usuario'} <img id= profilePhoto src=${user.photoURL || '../resources/logo.png'} >`;
+  userInfo.innerHTML = `Hola ${user.displayName || 'Usuario'} <img id= profilePhoto src=${user.photoURL || '../resources/profile.png'} >`;
 };
 
 //  auth changed
