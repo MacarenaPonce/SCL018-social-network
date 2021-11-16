@@ -24,6 +24,13 @@ export const sendEmail = () => {
     });
 };
 
+// element profile user
+export const profileInit = (user) => {
+  const userInfo = document.querySelector('#userInfo');
+  userInfo.innerHTML = `Hola ${user.displayName || 'Usuario'} <img id= profilePhoto src=${user.photoURL || '../resources/profile.png'} >`;
+  window.location.hash = '#/timeLine';
+};
+
 // registrarse en la app
 export const userRegister = () => {
   // según buenas prácticas, estas 2 lineas deben estar en template
@@ -91,12 +98,6 @@ export const loginWithGoogle = () => {
       const credential = GoogleAuthProvider.credentialFromError(error);
       // ...
     });
-};
-
-// element profile user
-export const profileInit = (user) => {
-  const userInfo = document.querySelector('#userInfo');
-  userInfo.innerHTML = `Hola ${user.displayName || 'Usuario'} <img id= profilePhoto src=${user.photoURL || '../resources/profile.png'} >`;
 };
 
 //  auth changed

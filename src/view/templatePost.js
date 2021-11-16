@@ -1,6 +1,5 @@
 // import función para crear una publicación
 import { createPost } from '../lib/firestore.js';
-import { timeLine } from './templateTimeLine.js';
 
 export const post = () => {
   const thirdPage = document.createElement('div');
@@ -46,17 +45,20 @@ export const post = () => {
 
   thirdPage.appendChild(section3);
 
+  // publicar un post
   const publish = section3.querySelector('#btnPost');
   publish.addEventListener('click', () => {
-    const artist = document.getElementById('artist').value;
-    const category = document.getElementById('category').value;
-    const date = document.getElementById('date').value;
-    const location = document.getElementById('location').value;
-    const url = document.getElementById('links').value;
-    const description = document.getElementById('description').value;
-    createPost(artist, category, date, location, url, description);
+    const artistValue = section3.querySelector('#artist').value;
+    const categoryValue = section3.querySelector('#category').value;
+    const dateValue = section3.querySelector('#date').value;
+    const descriptionValue = section3.querySelector('#description').value;
+    const urlValue = section3.querySelector('#links').value;
+    const locationValue = section3.querySelector('#location').value;
+    createPost(artistValue, categoryValue, dateValue, descriptionValue, urlValue, locationValue);
+    window.location.hash = '#/timeLine';
   });
 
+  // salir de la opción publicar
   const exitPost = header.querySelector('#close-post');
   exitPost.addEventListener('click', () => {
     window.location.hash = '#/timeLine';
