@@ -15,14 +15,12 @@ import { app } from './firebaseConfig.js';
 // const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider(app);
-let currentUser;
 
 // send Email verification
 export const sendEmail = () => {
   sendEmailVerification(auth.currentUser)
     .then(() => {
-      // Email verification sent!
-      // ...
+      alert ('Hemos enviado un correo de verificación para validar tu cuenta');
     });
 };
 
@@ -36,13 +34,12 @@ export const userRegister = () => {
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
-      currentUser = user;
 
       // ...
       alert('Registro exitoso, ahora puedes iniciar sesión');
-      console.log('usuario creado');
-      sendEmail();
-      window.location.hash = '#/login';
+      console.log('usuario creado', user);
+      // sendEmail();
+      // window.location.hash = '#/login';
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -63,10 +60,7 @@ export const userLogin = () => {
       // Signed in
       const user = userCredential.user;
       currentUser = user;
-      // ...
-      // alert('acceso autorizado', currentUser.displayName);
-      // console.log('acceso autorizado');
-      window.location.hash = '#/timeLine';
+      // window.location.hash = '#/timeLine';
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -86,9 +80,6 @@ export const loginWithGoogle = () => {
       const token = credential.accessToken;
       // The signed-in user info.
       const user = result.user;
-      currentUser = user;
-      // alert('Bienvenide', currentUser.displayName);
-      // console.log('Bienvenide', currentUser.displayName);
       window.location.hash = '#/timeLine';
       // ...
     }).catch((error) => {
@@ -103,15 +94,19 @@ export const loginWithGoogle = () => {
     });
 };
 
+// element profile user
+export const profileInit = (user) => {
+  const userInfo = document.querySelector('#userInfo');
+  userInfo.innerHTML = `Hola ${user.displayName || 'Usuario'} <img id= profilePhoto src=${user.photoURL || '../resources/logo.png'} >`;
+};
+
 //  auth changed
 export const authChanged = () => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      const userData = user;
       const uid = user.uid;
-      console.log('usuario logueado', userData.displayName);
-      alert('Bienvenide', userData.displayName);
-      profileInit();
+      console.log('usuario logueado', user.displayName);
+      profileInit(user);
       // ...
     } else {
       console.log('user is signed out');
@@ -120,21 +115,13 @@ export const authChanged = () => {
   });
 };
 
-// element profile user
-export const profileInit = () => {
-  const userInfo = document.getElementById('userInfo');
-  userInfo.innerHTML = `<img scr = '${currentUser.photoURL}' width= '32'/>
-    <span> ${currentUser.displayName} </span>`;
-};
-
 // cerrar sesión
 
 export const exit = () => {
   signOut(auth).then(() => {
     window.location.hash = '#/login';
     alert('Sesión cerrada con éxito, vuelve pronto');
-    // Sign-out successful.
   }).catch((error) => {
-    // An error happened.
+    alert(error);
   });
 };

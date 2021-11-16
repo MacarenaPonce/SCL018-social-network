@@ -8,11 +8,12 @@ export const timeLine = () => {
 
   // header
   const header = document.createElement('header');
+  header.id = 'headerTimeLine';
   quarterPage.appendChild(header);
 
   const profileNav = document.createElement('div');
   profileNav.id = 'userInfo';
-  quarterPage.appendChild(profileNav);
+  header.appendChild(profileNav);
 
   const logo = document.createElement('img');
   logo.className = 'logo';
