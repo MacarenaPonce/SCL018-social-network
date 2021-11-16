@@ -10,6 +10,10 @@ export const timeLine = () => {
   const header = document.createElement('header');
   quarterPage.appendChild(header);
 
+  const profileNav = document.createElement('div');
+  profileNav.id = 'userInfo';
+  quarterPage.appendChild(profileNav);
+
   const logo = document.createElement('img');
   logo.className = 'logo';
   logo.src = 'resources/logo.png';
