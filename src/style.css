@@ -34,6 +34,12 @@ header {
     text-align: center;
 }
 
+#headerTimeLine{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .firstPage .second-page {
     display: flex;
     flex-flow: column;
@@ -150,8 +156,10 @@ header {
 }
 
 #userInfo {
+    margin-top: 30px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items:flex-start;
 }
 
 #profilePhoto {

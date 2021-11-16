@@ -27,7 +27,7 @@ export const sendEmail = () => {
 // element profile user
 export const profileInit = (user) => {
   const userInfo = document.querySelector('#userInfo');
-  userInfo.innerHTML = `Hola ${user.displayName || 'Usuario'} <img id= profilePhoto src=${user.photoURL || '../resources/profile.png'} >`;
+  userInfo.innerHTML = `Hola ${user.displayName || 'Usuario'} <img id= profilePhoto src=${user.photoURL || '../resources/logo.png'} >`;
   window.location.hash = '#/timeLine';
 };
 
