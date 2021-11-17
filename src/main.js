@@ -1,21 +1,13 @@
 // import { homeLogin } from './view/templateLogin.js';
 
 import { routes } from './lib/router.js';
-
-/* document.getElementById('root').appendChild(homeLogin());
-
-const init = () => {
-  window.addEventListener('hashchange', () => {
-    console.log(window.location.hash);
-    changeRoute(window.location.hash);
-  });
-};
-
-window.addEventListener('load', init); */
+import { authChanged } from './lib/index.js';
+import { readData } from './lib/firestore.js';
 
 window.addEventListener('load', () => {
-  // onAuth();
   routes(window.location.hash);
+  authChanged();
+  readData();
 });
 
 window.addEventListener('hashchange', () => {
