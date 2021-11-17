@@ -1,4 +1,5 @@
 // import función para crear una publicación
+import { createPost } from '../lib/firestore.js';
 
 export const post = () => {
   const thirdPage = document.createElement('div');
@@ -14,13 +15,18 @@ export const post = () => {
   logo.src = 'resources/logo.png';
   header.appendChild(logo);
 
+  const closePost = document.createElement('img');
+  closePost.id = 'close-post';
+  closePost.src = 'resources/close.png';
+  header.appendChild(closePost);
+
   // nav
   const nav = document.createElement('nav');
   thirdPage.appendChild(nav);
 
-  const text = document.createElement('title');
+  const text = document.createElement('span');
   text.className = 'title';
-  text.innerHTML = ' <h1> Publicar </h1> ';
+  text.innerHTML = '<h1> Publicar </h1>';
   nav.appendChild(text);
 
   // section 3 - Página para crear un publicación
@@ -35,13 +41,28 @@ export const post = () => {
         <input type='text' id='description' class = 'input' placeholder= 'Descripción'/>
        
     
-       <a href='#/timeLine' <button id = 'btnPost' class= 'button'> Publicar </button> </a>`;
+      <button id = 'btnPost' class= 'button'> Publicar </button>`;
 
   thirdPage.appendChild(section3);
 
-  /* section3.querySelector('#btnRegister').addEventListener('click', () => {
-    userRegister();
-  }); */
+  // publicar un post
+  const publish = section3.querySelector('#btnPost');
+  publish.addEventListener('click', () => {
+    const artistValue = section3.querySelector('#artist').value;
+    const categoryValue = section3.querySelector('#category').value;
+    const dateValue = section3.querySelector('#date').value;
+    const descriptionValue = section3.querySelector('#description').value;
+    const urlValue = section3.querySelector('#links').value;
+    const locationValue = section3.querySelector('#location').value;
+    createPost(artistValue, categoryValue, dateValue, descriptionValue, urlValue, locationValue);
+    window.location.hash = '#/timeLine';
+  });
+
+  // salir de la opción publicar
+  const exitPost = header.querySelector('#close-post');
+  exitPost.addEventListener('click', () => {
+    window.location.hash = '#/timeLine';
+  });
 
   return thirdPage;
 };
