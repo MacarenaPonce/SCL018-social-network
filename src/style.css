@@ -19,6 +19,7 @@ ul {
 
 a {
     text-decoration: none;
+    color:#4C8A8A;
 }
 
 body {
@@ -31,6 +32,12 @@ body {
 
 header {
     text-align: center;
+}
+
+#headerTimeLine{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .firstPage .second-page {
@@ -102,7 +109,11 @@ header {
 }
 
 .icon {
-    width: 12%;
+    width: 25%;
+}
+
+.icon1 {
+    width: 18%;
 }
 
 .logo {
@@ -126,71 +137,32 @@ header {
     margin-bottom: 10%;
 }
 
-.options {
-    margin: 0 auto;
-    max-width: 1200px;
+.close-post{
+    width: 24px;
+}
+
+/*.wall-nav {
+    display: flex;
+    justify-content: space-around;
+}*/
+
+.title .userInfo{
+    color: rgb(240, 212, 185);
+    text-align: center;
+    size: 120px;
+}
+
+#userInfo {
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
+    align-items:flex-start;
 }
 
-.options a {
-    padding: 1rem;
-    display: block;
-}
-
-@media (min-width:768px) {
-
-    .options {
-        flex-direction: column;
-    }
-}
-
-.link {
-    overflow: hidden;
-}
-
-.link:target .submenu {
-    max-height: 300px;
-}
-
-@media (min-width:768px) {
-
-    .link {
-        flex: 1;
-        position: relative;
-        overflow: visible;
-    }
-
-    .link .submenu {
-        position: absolute;
-        width: 100%;
-    }
-}
-
-.submenu {
-    background-color: rgb(240, 212, 185);
-    max-height: 0;
-    transition: .8s;
-}
-
-@media (min-width:768px) {
-
-    .submenu a {
-        display: none;
-    }
-
-    .link:target .submenu a {
-        display: block;
-    }
-}
-
-.submenu a:hover {
-    background-color: rgb(240, 212, 185);
-}
-
-
-#post {
-    background-color: #FFFFFF;
+#profilePhoto {
+    border-radius: 10px;
+    padding: 10px;
+    width: 100px;
 }
 
 @media screen and (min-width:630px){
@@ -233,3 +205,96 @@ header {
         width: auto;
     }
 }
+
+/* css menu flotante */
+
+.nav-bar {
+    background-color: sandybrown;
+    padding: 20px;
+    display: block;
+    color: seashell;
+    cursor: pointer;
+    font-size: 1.5em;
+    width: 110%;
+}
+
+.menu, .submenu {
+    padding:0; 
+    margin: 0;
+}
+
+.menu {
+    background-color:transparent;
+    width: 110%;
+    transition: all 0.5s;
+}
+
+.menu-link {
+    display: block;
+    padding: 10px;
+    color: white;
+    font-size: 1.4em;
+}
+
+.menu-link:hover {
+    background: #444;
+}
+
+.submenu .menu-link:hover {
+    background: #222;
+}
+
+.submenu {
+    position: absolute;
+    height: 0;
+    overflow: visible;
+    transition: all 0.3s;
+    visibility: hidden;
+}
+
+.container-submenu:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1000;
+}
+
+.submenu .menu-link{
+    background-color:#333;
+    padding-left: 20;
+}
+
+.showMenu {
+    margin-left: 0;
+}
+
+/* @media (min-width:1024px) {
+    .nav-bar {
+        display: none;
+    }
+    
+    .menu {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .container-submenu {
+        position: relative;
+    }
+
+    .submenu {
+        position: absolute;
+        top: 60px;
+        width: 200px;
+        overflow: visible;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .container-submenu:hover .submenu {
+        opacity: 1;
+        visibility: visible;
+
+    }
+} */
