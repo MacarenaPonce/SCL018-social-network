@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-import { initi}
-=======
 import { collection, addDoc, getFirestore, getDocs } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js';
 import { app } from '../lib/firebaseConfig.js';
 
@@ -28,4 +25,3 @@ export const readData = async () => {
     // console.log(doc.id, ' => ', doc.data());
   });
 };
->>>>>>> main
