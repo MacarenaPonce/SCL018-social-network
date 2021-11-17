@@ -109,7 +109,11 @@ header {
 }
 
 .icon {
-    width: 12%;
+    width: 25%;
+}
+
+.icon1 {
+    width: 18%;
 }
 
 .logo {
@@ -137,17 +141,10 @@ header {
     width: 24px;
 }
 
-.options {
-    margin: 0 auto;
-    max-width: 1200px;
-    display: flex;
-    flex-direction: column;
-}
-
-.wall-nav {
+/*.wall-nav {
     display: flex;
     justify-content: space-around;
-}
+}*/
 
 .title .userInfo{
     color: rgb(240, 212, 185);
@@ -208,3 +205,96 @@ header {
         width: auto;
     }
 }
+
+/* css menu flotante */
+
+.nav-bar {
+    background-color: sandybrown;
+    padding: 20px;
+    display: block;
+    color: seashell;
+    cursor: pointer;
+    font-size: 1.5em;
+    width: 110%;
+}
+
+.menu, .submenu {
+    padding:0; 
+    margin: 0;
+}
+
+.menu {
+    background-color:transparent;
+    width: 110%;
+    transition: all 0.5s;
+}
+
+.menu-link {
+    display: block;
+    padding: 10px;
+    color: white;
+    font-size: 1.4em;
+}
+
+.menu-link:hover {
+    background: #444;
+}
+
+.submenu .menu-link:hover {
+    background: #222;
+}
+
+.submenu {
+    position: absolute;
+    height: 0;
+    overflow: visible;
+    transition: all 0.3s;
+    visibility: hidden;
+}
+
+.container-submenu:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1000;
+}
+
+.submenu .menu-link{
+    background-color:#333;
+    padding-left: 20;
+}
+
+.showMenu {
+    margin-left: 0;
+}
+
+/* @media (min-width:1024px) {
+    .nav-bar {
+        display: none;
+    }
+    
+    .menu {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .container-submenu {
+        position: relative;
+    }
+
+    .submenu {
+        position: absolute;
+        top: 60px;
+        width: 200px;
+        overflow: visible;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .container-submenu:hover .submenu {
+        opacity: 1;
+        visibility: visible;
+
+    }
+} */
