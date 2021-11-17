@@ -111,7 +111,6 @@ export const authChanged = () => {
     if (user) {
       const uid = user.uid;
       console.log('usuario logueado', user.displayName);
-      console.log(user);
       profileInit(user);
       // ...
     } else {
@@ -124,8 +123,8 @@ export const authChanged = () => {
 // cerrar sesión
 export const exit = () => {
   signOut(auth).then(() => {
-    window.location.hash = '#/login';
     alert('Sesión cerrada con éxito, vuelve pronto');
+    window.location.hash = '#/login';
   }).catch((error) => {
     alert(error);
   });

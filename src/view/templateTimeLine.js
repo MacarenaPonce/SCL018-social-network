@@ -30,7 +30,7 @@ export const timeLine = () => {
         <li class='menu-item container-submenu'> <a href='#' class='menu-link submenu-btn'> <img src = ./resources/profile.png class = 'icon1'> Perfil </a>
           <ul class= 'submenu'>
             <li class='menu-item'> <a href='#' class='menu-link'>  <img src = ./resources/edit.png class = 'icon1'> Editar perfil </a> </li>
-            <li class='menu-item'> <a href='#' class='menu-link'> <img src = ./resources/sign-out.png id = 'logOut' class = 'icon'> Cerrar sesión </a> </li>
+            <li class='menu-item menu-link' id = 'logOut'> <img src = ./resources/sign-out.png class = 'icon'> Cerrar sesión </li>
             </ul>
         </li>
         <li class='menu-item'><a href='#' class='menu-link'> <img src = ./resources/search.png class = 'icon1'> Buscar </a><li>
