@@ -29,12 +29,12 @@ export const timeLine = () => {
       <ul class='menu' id='menu'>
         <li class='menu-item container-submenu'> <a href='#' class='menu-link submenu-btn'> <img src = ./resources/profile.png class = 'icon1'> Perfil </a>
           <ul class= 'submenu'>
-            <li class='menu-item'> <a href='#' class='menu-link'>  <img src = ./resources/edit.png class = 'icon1'> Editar perfil </a> </li>
-            <li class='menu-item'> <a href='#' class='menu-link'> <img src = ./resources/sign-out.png id = 'logOut' class = 'icon'> Cerrar sesión </a> </li>
+            <li class='menu-item menu-link'> <img src = ./resources/edit.png class = 'icon1'> Editar perfil </li>
+            <li class='menu-item menu-link' id = 'logOut' > <img src = ./resources/sign-out.png class = 'icon'> Cerrar sesión </li>
             </ul>
         </li>
-        <li class='menu-item'><a href='#' class='menu-link'> <img src = ./resources/search.png class = 'icon1'> Buscar </a><li>
-        <li class='menu-item'><a href='#' class='menu-link'> <img src = ./resources/calendar.png class = 'icon1'> Calendario </a><li>
+        <li class='menu-item menu-link'> <img src = ./resources/search.png class = 'icon1'> Buscar <li>
+        <li class='menu-item menu-link'> <img src = ./resources/calendar.png class = 'icon1'> Calendario <li>
         </ul>
       </nav>
 
@@ -45,15 +45,18 @@ export const timeLine = () => {
   const section4 = document.createElement('section');
   section4.className = 'post';
   section4.id = 'post';
+  quarterPage.appendChild(section4);
 
   // main
   const main = document.createElement('main');
   main.className = 'containerPost';
   main.id = 'containerPost';
-  section4.innerHTML = `<p> acá va el div con la info de publicación </p> 
+  main.innerHTML = `<span id ='userTitle'> </p> 
+  <p id='readColection'> <p>
+
 
   <a href='#/post'> <button id="btnPublish"> <img src = 'resources/post.png'> </button> </a>`;
-  quarterPage.appendChild(section4);
+  section4.appendChild(main);
 
   const logOut = header.querySelector('#logOut');
   logOut.addEventListener('click', () => {

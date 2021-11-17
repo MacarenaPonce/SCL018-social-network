@@ -19,39 +19,36 @@ import { app } from './firebaseConfig.js';
 // const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider(app);
-const db = getFirestore();
-
-// send Email verification
-export const sendEmail = () => {
-  sendEmailVerification(auth.currentUser)
-    .then(() => {
-      alert('Hemos enviado un correo de verificación para validar tu cuenta');
-    });
-};
 
 // element profile user
 export const profileInit = (user) => {
   const userInfo = document.querySelector('#userInfo');
+  const userTitle = document.querySelector('#userTitle');
   userInfo.innerHTML = `Hola ${user.displayName || 'Usuario'} <img id= profilePhoto src=${user.photoURL || '../resources/logo.png'} >`;
+  userTitle.innerHTML = `<img id= profilePhoto src=${user.photoURL || '../resources/logo.png'} > ${user.displayName || 'Usuario'} `;
   window.location.hash = '#/timeLine';
 };
 
-// registrarse en la app
-export const userRegister = () => {
-  // según buenas prácticas, estas 2 lineas deben estar en template
-  const email = document.getElementById('mailRegister').value;
-  const password = document.getElementById('passwordRegister').value;
-
+// registrar usuario
+export const userRegister = (email, password) => {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
-
-      // ...
-      alert('Registro exitoso, ahora puedes iniciar sesión');
       console.log('usuario creado', user);
-      // sendEmail();
-      window.location.hash = '#/login';
+
+      // send email verification
+      if (user != null) {
+        sendEmailVerification(auth.currentUser)
+          .then(() => {
+            console.log('correo enviado');
+            alert('Hemos enviado un correo de verificación para validar tu cuenta');
+            window.location.hash = '#/login';
+          })
+          .catch((error) => {
+            console.log('Proceso no realizado', error);
+          });
+      }
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -63,10 +60,7 @@ export const userRegister = () => {
 };
 
 // iniciar sesión con correo
-export const userLogin = () => {
-  // según buenas prácticas, estas 2 lineas deben estar en template
-  const email1 = document.getElementById('mailLogin').value;
-  const password1 = document.getElementById('passwordLogin').value;
+export const userLogin = (email1, password1) => {
   signInWithEmailAndPassword(auth, email1, password1)
     .then((userCredential) => {
       // Signed in

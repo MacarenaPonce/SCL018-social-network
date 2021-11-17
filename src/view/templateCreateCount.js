@@ -31,7 +31,9 @@ export const createCount = () => {
   secondPage.appendChild(section2);
 
   section2.querySelector('#btnRegister').addEventListener('click', () => {
-    userRegister();
+    const email = section2.querySelector('#mailRegister').value;
+    const password = section2.querySelector('#passwordRegister').value;
+    userRegister(email, password);
   });
 
   return secondPage;
