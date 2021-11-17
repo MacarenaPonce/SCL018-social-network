@@ -111,6 +111,7 @@ export const authChanged = () => {
     if (user) {
       const uid = user.uid;
       console.log('usuario logueado', user.displayName);
+      console.log(user);
       profileInit(user);
       // ...
     } else {
