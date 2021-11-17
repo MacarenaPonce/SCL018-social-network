@@ -23,7 +23,6 @@ export const timeLine = () => {
   // options nav
   const nav = document.createElement('nav');
   nav.className = 'wall-nav';
-
   nav.innerHTML = `
   <span class='nav-bar' id='btnMenu'> <i class= 'fas fa-bars'> </i> Menú </span>
     <nav class='main-nav'>
@@ -37,8 +36,9 @@ export const timeLine = () => {
         <li class='menu-item'><a href='#' class='menu-link'> <img src = ./resources/search.png class = 'icon1'> Buscar </a><li>
         <li class='menu-item'><a href='#' class='menu-link'> <img src = ./resources/calendar.png class = 'icon1'> Calendario </a><li>
         </ul>
-      </nav> `;
-  
+      </nav>
+
+     `;
   header.appendChild(nav);
 
   // section 4 - Página para crear un publicación
@@ -55,7 +55,6 @@ export const timeLine = () => {
   <a href='#/post'> <button id="btnPublish"> <img src = 'resources/post.png'> </button> </a>`;
   quarterPage.appendChild(section4);
 
-
   const logOut = header.querySelector('#logOut');
   logOut.addEventListener('click', () => {
     exit();
@@ -67,8 +66,5 @@ export const timeLine = () => {
     menu.classList.toggle('showMenu');
   }); */
 
-
   return quarterPage;
 };
-
-// <button id='logOut'> <img src ='resources/sign-out.png' class = 'minIcon'> </button>

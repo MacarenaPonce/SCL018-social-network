@@ -1,30 +1,31 @@
 // Import the functions you need from the SDKs you need
 // 17-11 cambios
+
 import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   GoogleAuthProvider,
-
   sendEmailVerification,
   signInWithPopup,
   onAuthStateChanged,
-
   signOut,
 } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js';
+
+import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js';
 
 import { app } from './firebaseConfig.js';
 
 // const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider(app);
+const db = getFirestore();
 
 // send Email verification
 export const sendEmail = () => {
   sendEmailVerification(auth.currentUser)
     .then(() => {
-
-      alert ('Hemos enviado un correo de verificación para validar tu cuenta');
+      alert('Hemos enviado un correo de verificación para validar tu cuenta');
     });
 };
 
@@ -35,7 +36,6 @@ export const profileInit = (user) => {
   window.location.hash = '#/timeLine';
 };
 
-     
 // registrarse en la app
 export const userRegister = () => {
   // según buenas prácticas, estas 2 lineas deben estar en template
@@ -46,7 +46,6 @@ export const userRegister = () => {
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
-
 
       // ...
       alert('Registro exitoso, ahora puedes iniciar sesión');
@@ -92,11 +91,9 @@ export const loginWithGoogle = () => {
       const token = credential.accessToken;
       // The signed-in user info.
       const user = result.user;
-    
       window.location.hash = '#/timeLine';
       // ...
     }).catch((error) => {
-
       // Handle Errors here.
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -114,7 +111,9 @@ export const authChanged = () => {
     if (user) {
       const uid = user.uid;
       console.log('usuario logueado', user.displayName);
+      console.log(user);
       profileInit(user);
+      // ...
     } else {
       console.log('user is signed out');
       window.location.hash = '#/login';
@@ -122,15 +121,12 @@ export const authChanged = () => {
   });
 };
 
-
 // cerrar sesión
 export const exit = () => {
   signOut(auth).then(() => {
     window.location.hash = '#/login';
-    
     alert('Sesión cerrada con éxito, vuelve pronto');
   }).catch((error) => {
     alert(error);
   });
 };
-
