@@ -30,14 +30,15 @@ body {
     margin-right: 10%;
 }
 
-header {
+#headerTimeLine {
     text-align: center;
-}
-
-#headerTimeLine{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+}
+
+.logo-timeLine {
+    width: 25%;
 }
 
 .firstPage .second-page {
@@ -160,9 +161,10 @@ header {
 }
 
 #profilePhoto {
-    border-radius: 10px;
+    width: 90px;
     padding: 10px;
-    width: 100px;
+    height:100;
+    border-radius:60px;
 }
 
 @media screen and (min-width:630px){
@@ -234,6 +236,7 @@ header {
     padding: 10px;
     color: white;
     font-size: 1.4em;
+    cursor: pointer;
 }
 
 .menu-link:hover {

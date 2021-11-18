@@ -1,4 +1,4 @@
-import { userLogin, loginWithGoogle } from '../lib/index.js';
+import { userLogin, loginWithGoogle } from '../lib/auth.js';
 
 export const homeLogin = () => {
   // container principal
@@ -33,7 +33,9 @@ export const homeLogin = () => {
   firstPage.appendChild(section1);
 
   section1.querySelector('#btnLogin').addEventListener('click', () => {
-    userLogin();
+    const email1 = section1.querySelector('#mailLogin').value;
+    const password1 = section1.querySelector('#passwordLogin').value;
+    userLogin(email1, password1);
   });
 
   section1.querySelector('#googleLogin').addEventListener('click', () => {
