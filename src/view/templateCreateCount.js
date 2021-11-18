@@ -1,4 +1,4 @@
-import { userRegister } from '../lib/index.js';
+import { userRegister } from '../lib/auth.js';
 
 export const createCount = () => {
   const secondPage = document.createElement('div');
@@ -33,7 +33,8 @@ export const createCount = () => {
   section2.querySelector('#btnRegister').addEventListener('click', () => {
     const email = section2.querySelector('#mailRegister').value;
     const password = section2.querySelector('#passwordRegister').value;
-    userRegister(email, password);
+    const name = section2.querySelector('#createName').value;
+    userRegister(email, password, name);
   });
 
   return secondPage;

@@ -30,14 +30,15 @@ body {
     margin-right: 10%;
 }
 
-header {
+#headerTimeLine {
     text-align: center;
-}
-
-#headerTimeLine{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+}
+
+.logo-timeLine {
+    width: 25%;
 }
 
 .firstPage .second-page {

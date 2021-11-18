@@ -1,7 +1,7 @@
 // import { homeLogin } from './view/templateLogin.js';
 
 import { routes } from './lib/router.js';
-import { authChanged } from './lib/index.js';
+import { authChanged } from './lib/auth.js';
 import { readData } from './lib/firestore.js';
 
 window.addEventListener('load', () => {
