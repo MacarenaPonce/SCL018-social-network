@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-// 17-11 cambios
+// 18-11 cambios
 
 import {
   getAuth,
@@ -29,15 +29,15 @@ export const profileInit = (user) => {
 }; */
 
 // registrar usuario
-export const userRegister = (email, password, name) => {
+export const userRegister = (email, password) => {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
       console.log('usuario creado', user);
-      updateProfile(auth.currentUser, {
+      /* updateProfile(auth.currentUser, {
         displayName: name,
-      });
+      }); */
 
       // send email verification
       if (user != null) {
