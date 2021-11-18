@@ -1,5 +1,6 @@
 // import función para muro??
 import { exit } from '../lib/auth.js';
+import { showPost } from '../view/callPost.js';
 
 export const timeLine = () => {
   const containerRoot = document.querySelector('#root');
@@ -30,6 +31,7 @@ export const timeLine = () => {
 
   quarterPage.innerHTML = structureWall;
   containerRoot.appendChild(quarterPage);
+  showPost();
 
   const logOut = quarterPage.querySelector('#logOut');
   logOut.addEventListener('click', () => {

@@ -1,6 +1,6 @@
 import { readData } from '../lib/firestore.js';
 
-function PostCallback (posts) {
+export const postCallback = (post) => {
   const postMain = document.querySelector('#containerPost');
   postMain.innerHTML = '';
   const postContent = (element) => {
@@ -20,21 +20,21 @@ function PostCallback (posts) {
      </div>
      <div class='reactions'>
        <div class='btnLike'>
-        <img class='img' src='./images/like.png'> 
+        <img class='img' src='./resources/like.png'> 
         </div>
         <div class='btnRecom'>
-        <img class='img' src='./images/comment.png'>
+        <img class='img' src='./resources/comment.png'>
         </div>
      </div>
     </div>
     `;
-    nav.appendChild(postUser);
+    postMain.appendChild(postUser);
     // console.log(nav);
   };
-  posts.forEach(postContent);
-  return nav;
-}
+  post.forEach(postContent);
+  return postMain;
+};
 
 export const showPost = () => {
-  readData('Post', PostCallback);
+  readData('Post', postCallback);
 };

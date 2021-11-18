@@ -10,7 +10,6 @@ import {
   signInWithPopup,
   onAuthStateChanged,
   signOut,
-  updateProfile,
 } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js';
 
 import { app } from './firebaseConfig.js';
@@ -29,15 +28,12 @@ export const profileInit = (user) => {
 }; */
 
 // registrar usuario
-export const userRegister = (email, password, name) => {
+export const userRegister = (email, password) => {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
       console.log('usuario creado', user);
-      updateProfile(auth.currentUser, {
-        displayName: name,
-      });
 
       // send email verification
       if (user != null) {
