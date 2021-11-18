@@ -1,5 +1,7 @@
 // import función para muro??
 import { exit } from '../lib/auth.js';
+import { readData } from '../lib/firestore.js';
+import { postCallback } from '../view/callPost.js'
 import { showPost } from '../view/callPost.js';
 
 export const timeLine = () => {
@@ -32,17 +34,10 @@ export const timeLine = () => {
   quarterPage.innerHTML = structureWall;
   containerRoot.appendChild(quarterPage);
   showPost();
-
   const logOut = quarterPage.querySelector('#logOut');
   logOut.addEventListener('click', () => {
     exit();
   });
-
-  /* const btnMenu = header.querySelector('#btnMenu');
-  const menu = header.querySelector('#menu');
-  btnMenu.addEventListener('click', () => {
-    menu.classList.toggle('showMenu');
-  }); */
-
+  readData('Post', postCallback);
   return quarterPage;
 };

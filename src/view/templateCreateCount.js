@@ -33,6 +33,7 @@ export const createCount = () => {
   section2.querySelector('#btnRegister').addEventListener('click', () => {
     const email = section2.querySelector('#mailRegister').value;
     const password = section2.querySelector('#passwordRegister').value;
+    /* const name = section2.querySelector('#createName').value; */
     userRegister(email, password);
   });
 

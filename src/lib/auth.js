@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-// 17-11 cambios
+// 18-11 cambios
 
 import {
   getAuth,
@@ -22,8 +22,10 @@ const provider = new GoogleAuthProvider(app);
 export const profileInit = (user) => {
   const userInfo = document.querySelector('#userInfo');
   const userTitle = document.querySelector('#userTitle');
-  userInfo.innerHTML = `Hola ${user.displayName || 'Usuario'} <img id= profilePhoto src=${user.photoURL || '../resources/logo.png'} >`;
-  userTitle.innerHTML = `<img id= profilePhoto src=${user.photoURL || '../resources/logo.png'} > ${user.displayName || 'Usuario'} `;
+  userInfo.innerHTML = `Hola ${user.displayName || 'Usuario'}
+  <img id= profilePhoto src=${user.photoURL || '../resources/logo.png'} >`;
+  userTitle.innerHTML = `<img id= profilePhoto src=${user.photoURL || '../resources/logo.png'} >
+   ${user.displayName || 'Usuario'} `;
   window.location.hash = '#/timeLine';
 }; */
 
@@ -34,6 +36,9 @@ export const userRegister = (email, password) => {
       // Signed in
       const user = userCredential.user;
       console.log('usuario creado', user);
+      /* updateProfile(auth.currentUser, {
+        displayName: name,
+      }); */
 
       // send email verification
       if (user != null) {
