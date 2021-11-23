@@ -20,7 +20,7 @@ export const homeLogin = () => {
   section1.className = 'login';
   section1.innerHTML = ` <input type='email' class= 'input' id='mailLogin' placeholder='Email' />
         <input type='password' class= 'input' id='passwordLogin' placeholder='password' value='password'/>
-        <p class = 'info'> Olvidé mi contraseña </p>
+        <p class = 'info' id = "lostPassword"> Olvidé mi contraseña </p>
     
        <a href='#/timeLine'> <button id = 'btnLogin' class= 'button'> Ingresar </button> </a>
     
@@ -28,7 +28,7 @@ export const homeLogin = () => {
     
         <button id="googleLogin"> <img src = 'resources/google.png' class = 'google'> </button>
     
-        <p class='info'> ¿No tienes  una cuenta? <a href='#/count'> Crea una cuenta </a> </p>`;
+        <p class='info'> ¿No tienes  una cuenta? <a href='#/account'> Crea una cuenta </a> </p>`;
 
   firstPage.appendChild(section1);
 
@@ -41,6 +41,12 @@ export const homeLogin = () => {
   section1.querySelector('#googleLogin').addEventListener('click', () => {
     loginWithGoogle();
   });
+
+  section1.querySelector('#lostPassword').addEventListener('click', () => {
+    window.location.hash = '#/resetPassword';
+  });
+
+
 
   return firstPage;
 };
