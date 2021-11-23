@@ -30,15 +30,15 @@ export const profileInit = (user) => {
 }; */
 
 // registrar usuario
-export const userRegister = (email, password) => {
+export const userRegister = (email, password, name) => {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
       console.log('usuario creado', user);
-      /* updateProfile(auth.currentUser, {
+      updateProfile(auth.currentUser, {
         displayName: name,
-      }); */
+      });
 
       // send email verification
       if (user != null) {
@@ -68,7 +68,13 @@ export const userLogin = (email1, password1) => {
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
-      window.location.hash = '#/timeLine';
+      if (user && user.emailVerified === true) {
+        window.location.hash = '#/timeLine';
+      }
+      else {
+        alert("Recuerda validar tu correo");
+        window.location.hash = '#/login';
+      }
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -125,4 +131,16 @@ export const exit = () => {
   }).catch((error) => {
     alert(error);
   });
+};
+
+//Función para cambiar contraseña olvidada
+export const sendPasswordReset = (email) => {
+  sendPasswordResetEmail(auth, email)
+    .then(() => {
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
+    });
 };
