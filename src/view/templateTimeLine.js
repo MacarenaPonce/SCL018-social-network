@@ -27,7 +27,7 @@ export const timeLine = () => {
         </ul>
       </nav>
       </header> 
-      <section id= 'post'> <a href='#/post'> <button id="btnPublish"> <img src = 'resources/post.png'> </button> </a>
+      <section id= 'post'> <a href='#/post'> <button id="btnPublish"> <img src = 'resources/post.png' class='publish-btn'> </button> </a>
       <main id='containerPost'> </main>
        </section>
       `;

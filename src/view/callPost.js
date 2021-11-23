@@ -7,9 +7,9 @@ export const postCallback = (posts) => {
   postMain.innerHTML = '';
   const postContent = (element) => {
     const postUser = document.createElement('div');
+    postUser.className = 'allPost';
     postUser.innerHTML += `
-    <div class='allPost'>
-    <div class ='name'>${element.userName}</div>
+    <div class ='name'> ${element.userName} </div>
      <div class='post'>
       <div class="feedPost"> 
       ${element.artist}
