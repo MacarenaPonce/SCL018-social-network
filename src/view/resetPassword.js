@@ -13,24 +13,24 @@ export const resetPasswordFirebase = (container) => {
     }
   });
 };
-
+//PARA COMENTAR UN TEMPLATE ES <!-- TEXTO -->
 // Template para resetear contraseña
 export const resetPassword = () => {
   const container = document.createElement('section');
   container.classList.add('resetPasswordContainer');
   container.innerHTML = `
     <form id="passwordForm" class="resetPasswordForm">
-      <div class="container-logo">
+      <!--div class="container-logo">
       <img class="password-logo" src="./resources/logo.png" alt='logoConcertDate'/> 
-      </div>
+      </diV-->
       <div class= "container-password">
-      <img src= "./resources/password.png" class= "iconPassword">
-      <h1> ¿Tienes problemas para iniciar sesión?</h1> 
-      <label class="formText resetText"> Ingresa tu correo y te enviaremos un enlace para que recuperes el acceso a tu cuenta</label>
+      <img src= "./resources/password.png" class= "password-logo">
+      <h1 class="hText"> ¿Tienes problemas para iniciar sesión? </h1> 
+      <label class="formText"> Ingresa tu correo y te enviaremos un enlace para que recuperes el acceso a tu cuenta</label>
       <input id="resetEmail" class="input" name="emailReset" type="email" placeholder="correo@example.com" pattern="^\\S+@\\S+\\.\\S+$" title="Ejemplo: correo@example.com" required/>
       <button id="resetPasswordButton" class="button"> Recuperar contraseña </button>
-      <a href="#/account" > Crear cuenta nueva </a>
-      <a href="#/login"> Volver a inicio de sesión </a>
+      <a id="ccn" href="#/account" > Crear cuenta nueva </a>
+      <a id="vis" href="#/login"> Volver a inicio de sesión </a>
       </div>
     </form>
   `;

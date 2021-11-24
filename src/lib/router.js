@@ -2,6 +2,7 @@ import { homeLogin } from '../view/templateLogin.js';
 import { createAccount } from '../view/templateCreateAccount.js';
 import { post } from '../view/templatePost.js';
 import { timeLine } from '../view/templateTimeLine.js';
+import { resetPassword } from '../view/resetPassword.js';
 
 export const routes = (hash) => {
   const rootContainer = document.getElementById('root');

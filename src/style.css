@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@600&display=swap');
 
+/* elementos generales */
+
 html { 
     box-sizing: border-box;
 }
 *, *:before, *::after {
     box-sizing: inherit;
 }
-
+/* Para limpiar links */
 li {
     list-style: none;
     padding: 0;
@@ -22,6 +24,7 @@ a {
     color:#4C8A8A;
 }
 
+/* Estructura general de páginas*/
 body {
     background-color: rgba(28, 25, 26, 1);
     color:rgb(240, 212, 185);
@@ -30,6 +33,60 @@ body {
     margin-right: 10%;
 }
 
+/* Página de login */
+.firstPage {
+    display:flex; 
+    flex-direction: column;
+}
+
+#logoCD {
+    width: 80%;
+    display: block;
+    margin: auto;
+}
+
+/* Página de createAccount (OK) */   
+
+/* Página olvidé mi contraseña */
+
+.password-logo {
+    width: 20%;
+    display: block;
+    margin: 30px auto 30px auto;
+}
+
+/* .iconPassword {
+    margin-top: 10px;
+    width: 15%;
+    display: block;
+    margin: auto;
+}
+ */
+
+ .hText {
+    font-size: 15px;
+    margin-bottom: 20px;
+ }
+
+ .formText {
+    font-size: 10px;
+ }
+
+.resetPasswordForm {
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+}
+
+#ccn {
+    font-size: 10px;
+    color:rgb(240, 212, 185);
+}
+
+#vis {
+    font-size: 10px;
+
+}
 /* Post */
 
 .close-post{
@@ -137,11 +194,11 @@ body {
     width: 18%;
 }
 
-.logo {
+/* .logo {
     width: 40%;
     display: block;
     margin: auto;
-}
+} */
 
 .button:hover {
     background-color: #FFFFFF; 
@@ -241,24 +298,7 @@ body {
     flex-direction: column;
 }
 
-/* Page resetPassword */
-.password-logo {
-    width: 35%;
-    display: block;
-    margin: auto;
-}
 
-.iconPassword {
-    width: 10%;
-    display: block;
-    margin: auto;
-}
-
-.resetPasswordForm {
-    display: flex;
-    flex-direction: column;
-    text-align:center;
-}
 
 /* media computador */ 
 
@@ -302,7 +342,7 @@ body {
         grid-column-start: 2;
     }
 
-    .title1 {
+    .logo {
         margin-top: 10%;
         width: auto;
     }

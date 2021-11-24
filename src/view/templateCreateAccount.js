@@ -6,7 +6,7 @@ export const createAccount = () => {
   secondPage.id = 'secondPage';
 
   secondPage.innerHTML = `<header> 
-  <img src= 'resources/logo.png' class= 'title1'>
+  <img src= 'resources/logo.png' class= 'logo' id='logoCD'>
    </header> 
    <section class= 'createAccount' id= 'createAccount'> 
    <input type='text' id='createName' class = 'input' placeholder='Nombre de usuario'/>
