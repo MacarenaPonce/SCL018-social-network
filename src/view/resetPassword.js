@@ -1,24 +1,24 @@
 import { sendPasswordReset } from '../lib/auth.js';
 
-//Conexión con template
-//Se llama a la función que envía el correo para resetear
+// Conexión con template
+// Se llama a la función que envía el correo para resetear
 export const resetPasswordFirebase = (container) => {
-const resetBtn = container.querySelector('#resetPasswordButton');
-resetBtn.addEventListener ("click", () => {
-const email = container.querySelector('#resetEmail');
-if (email.value!=="") {
-    sendPasswordReset(email.value);
+  const resetBtn = container.querySelector('#resetPasswordButton');
+  resetBtn.addEventListener('click', () => {
+    const email = container.querySelector('#resetEmail');
+    if (email.value !== '') {
+      sendPasswordReset(email.value);
       alert('Hemos enviado un correo para que puedas recuperar tu contraseña');
       window.location.hash = '#/login';
-} 
-});
+    }
+  });
 };
 
-//Template para resetear contraseña
+// Template para resetear contraseña
 export const resetPassword = () => {
-    const container = document.createElement('section');
-    container.classList.add('resetPasswordContainer');
-    container.innerHTML =`
+  const container = document.createElement('section');
+  container.classList.add('resetPasswordContainer');
+  container.innerHTML = `
     <form id="passwordForm" class="resetPasswordForm">
       <div class="container-logo">
       <img class="password-logo" src="./resources/logo.png" alt='logoConcertDate'/> 
@@ -33,6 +33,7 @@ export const resetPassword = () => {
       <a href="#/login"> Volver a inicio de sesión </a>
       </div>
     </form>
-  `;resetPasswordFirebase(container);
+  `;
+  resetPasswordFirebase(container);
   return container;
 };

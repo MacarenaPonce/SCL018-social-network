@@ -30,6 +30,25 @@ body {
     margin-right: 10%;
 }
 
+/* Post */
+
+.close-post{
+    width: 15%;
+    align-self: right;
+    display: flex;
+}
+
+#post{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    flex-wrap: wrap;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+/* timeLine */
+
 #headerTimeLine {
     text-align: center;
     display: flex;
@@ -37,8 +56,14 @@ body {
     justify-content: space-around;
 }
 
+.title-templete {
+    text-align: center;
+    margin: 10px;
+    margin-top: 20px;
+}
+
 .logo-timeLine {
-    width: 25%;
+    width: 10%;
 }
 
 .firstPage .second-page {
@@ -47,11 +72,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
-.title1 {
-    width: 100%;
-}
-
 
 .input {
     width: 261px;
@@ -118,7 +138,9 @@ body {
 }
 
 .logo {
-    width: 50%;
+    width: 40%;
+    display: block;
+    margin: auto;
 }
 
 .button:hover {
@@ -134,18 +156,16 @@ body {
 #btnPublish{
     position: fixed;
     bottom: 30px;
-    right: 17px;
+    right: 20px;
     margin-bottom: 10%;
+    background-color: transparent;
+    border: none;
 }
 
-.close-post{
-    width: 24px;
+.publish-btn{
+    width: 20%;
+    margin-left: 70%;
 }
-
-/*.wall-nav {
-    display: flex;
-    justify-content: space-around;
-}*/
 
 .title .userInfo{
     color: rgb(240, 212, 185);
@@ -167,6 +187,81 @@ body {
     border-radius:60px;
 }
 
+/* container Post */
+
+#containerPost {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.allPost {
+    background-color: white;
+    color: rgba(0, 0, 0, 0.56);
+    margin: 25px;
+    width: 70%;
+    padding: 20px 40px 20px 40px;
+    font-family: 'Arimo', sans-serif;
+    border-radius: 20px;
+
+}
+
+.reactions {
+    border-top: rgba(0, 0, 0, 0.164);
+    border-top: solid;
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    padding-top: 15px;
+}
+
+.img-comment {
+    width: 50%;
+    padding-left:10px;
+}
+
+.name-user{
+    padding-right: 60%;
+}
+
+.img-options {
+    width: 7%;
+    height: 7%;
+
+}
+
+.user-post {
+    color: black;
+    display: flex;
+    flex-direction: row;
+}
+
+.feedPost {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Page resetPassword */
+.password-logo {
+    width: 35%;
+    display: block;
+    margin: auto;
+}
+
+.iconPassword {
+    width: 10%;
+    display: block;
+    margin: auto;
+}
+
+.resetPasswordForm {
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+}
+
+/* media computador */ 
+
 @media screen and (min-width:630px){
 
     .firstPage {
@@ -178,6 +273,19 @@ body {
     .second-page {
         display: grid;
         grid-template-columns: 50% 50%;
+    }
+
+    .resetPasswordForm {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    .container-logo {
+        grid-column-start: 1 ;
+    }
+
+    .container-password {
+        grid-column-start: 2;
     }
 
     head {

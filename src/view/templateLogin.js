@@ -6,47 +6,34 @@ export const homeLogin = () => {
   firstPage.className = 'firstPage';
   firstPage.id = 'container';
 
-  // header
-  const header = document.createElement('header');
-  firstPage.appendChild(header);
+  firstPage.innerHTML = ` <header> <img src= 'resources/logo.png' class='title1'> </header> 
+  <section class= 'login'> 
+  <input type='email' class= 'input' id='mailLogin' placeholder='Email' />
+  <input type='password' class= 'input' id='passwordLogin' placeholder='password' value='password'/>
+  <p class = 'info' id = "lostPassword"> Olvidé mi contraseña </p>
 
-  const logo = document.createElement('img');
-  logo.className = 'title1';
-  logo.src = 'resources/logo.png';
-  header.appendChild(logo);
+ <a href='#/timeLine'> <button id = 'btnLogin' class= 'button'> Ingresar </button> </a>
 
-  // section 1 - Página de login
-  const section1 = document.createElement('section');
-  section1.className = 'login';
-  section1.innerHTML = ` <input type='email' class= 'input' id='mailLogin' placeholder='Email' />
-        <input type='password' class= 'input' id='passwordLogin' placeholder='password' value='password'/>
-        <p class = 'info' id = "lostPassword"> Olvidé mi contraseña </p>
-    
-       <a href='#/timeLine'> <button id = 'btnLogin' class= 'button'> Ingresar </button> </a>
-    
-        <p class = 'info'> O ingresa con </p>
-    
-        <button id="googleLogin"> <img src = 'resources/google.png' class = 'google'> </button>
-    
-        <p class='info'> ¿No tienes  una cuenta? <a href='#/account'> Crea una cuenta </a> </p>`;
+  <p class = 'info'> O ingresa con </p>
 
-  firstPage.appendChild(section1);
+  <button id="googleLogin"> <img src = 'resources/google.png' class = 'google'> </button>
 
-  section1.querySelector('#btnLogin').addEventListener('click', () => {
-    const email1 = section1.querySelector('#mailLogin').value;
-    const password1 = section1.querySelector('#passwordLogin').value;
+  <p class='info'> ¿No tienes  una cuenta? <a href='#/account'> Crea una cuenta </a> </p>
+  </section>`;
+
+  firstPage.querySelector('#btnLogin').addEventListener('click', () => {
+    const email1 = firstPage.querySelector('#mailLogin').value;
+    const password1 = firstPage.querySelector('#passwordLogin').value;
     userLogin(email1, password1);
   });
 
-  section1.querySelector('#googleLogin').addEventListener('click', () => {
+  firstPage.querySelector('#googleLogin').addEventListener('click', () => {
     loginWithGoogle();
   });
 
-  section1.querySelector('#lostPassword').addEventListener('click', () => {
+  firstPage.querySelector('#lostPassword').addEventListener('click', () => {
     window.location.hash = '#/resetPassword';
   });
-
-
 
   return firstPage;
 };

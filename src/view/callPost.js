@@ -1,14 +1,15 @@
 import { readData } from '../lib/firestore.js';
-//Función que imprime los post
-//Esta función se llama en el TemplateTimeLine
+// Función que imprime los post
+// Esta función se llama en el TemplateTimeLine
+
 export const postCallback = (posts) => {
   const postMain = document.querySelector('#containerPost');
   postMain.innerHTML = '';
   const postContent = (element) => {
     const postUser = document.createElement('div');
+    postUser.className = 'allPost';
     postUser.innerHTML += `
-    <div class='allPost'>
-    <div class ='name'>${element.userName}</div>
+    <div class ='name'> ${element.userName} </div>
      <div class='post'>
       <div class="feedPost"> 
       ${element.artist}
@@ -33,7 +34,7 @@ export const postCallback = (posts) => {
   };
   posts.forEach(postContent);
   return postMain;
-} 
+};
 export const showPost = () => {
-readData ("Post", postCallback);
-}
+  readData('Post', postCallback);
+};

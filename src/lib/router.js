@@ -16,8 +16,7 @@ export const routes = (hash) => {
     rootContainer.appendChild(timeLine());
   } else if (hash === '#/post') {
     rootContainer.appendChild(post());
-  }else if (hash === '#/resetPassword') {
+  } else if (hash === '#/resetPassword') {
     rootContainer.appendChild(resetPassword());
   }
-
 };

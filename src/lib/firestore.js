@@ -1,10 +1,9 @@
 import {
   collection,
-  addDoc, 
-  getFirestore, 
-  getDocs, 
-  query, 
-  onSnapshot, 
+  addDoc,
+  getFirestore,
+  query,
+  onSnapshot,
   orderBy } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js';
 import { app } from '../lib/firebaseConfig.js';
 import { auth } from '../lib/auth.js';
@@ -17,6 +16,7 @@ export const createPost = async (artistValue, categoryValue, dateValue, descript
     // Add a new document with a generated id.
     const docRef = await addDoc(collection(db, 'Post'), {
       userName: auth.currentUser.displayName,
+      photo: auth.currentUser.user.photoURL,
       artist: artistValue,
       category: categoryValue,
       date: dateValue,
@@ -25,14 +25,14 @@ export const createPost = async (artistValue, categoryValue, dateValue, descript
       location: locationValue,
       datePost: Date(Date.now()),
     });
-    console.log('Document written with ID: ', docRef.id);
+    console.log('Document written with ID: ', docRef);
     return docRef;
   } catch (e) {
     console.error('Error adding document: ', e);
   }
 };
 
-//Función para leer data de la colección de Firebase
+// Función para leer data de la colección de Firebase
 export const readData = (nameCollection, callback) => {
   const q = query(collection(db, nameCollection), orderBy('datePost', 'desc'));
   onSnapshot(q, (querySnapshot) => {

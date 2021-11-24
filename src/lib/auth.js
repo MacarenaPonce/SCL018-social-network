@@ -9,8 +9,9 @@ import {
   sendEmailVerification,
   signInWithPopup,
   onAuthStateChanged,
-  signOut,
+  sendPasswordResetEmail,
   updateProfile,
+  signOut,
 } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js';
 
 import { app } from './firebaseConfig.js';
@@ -23,8 +24,10 @@ const provider = new GoogleAuthProvider(app);
 export const profileInit = (user) => {
   const userInfo = document.querySelector('#userInfo');
   const userTitle = document.querySelector('#userTitle');
-  userInfo.innerHTML = `Hola ${user.displayName || 'Usuario'} <img id= profilePhoto src=${user.photoURL || '../resources/logo.png'} >`;
-  userTitle.innerHTML = `<img id= profilePhoto src=${user.photoURL || '../resources/logo.png'} > ${user.displayName || 'Usuario'} `;
+  userInfo.innerHTML = `Hola ${user.displayName || 'Usuario'}
+  <img id= profilePhoto src=${user.photoURL || '../resources/logo.png'} >`;
+  userTitle.innerHTML = `<img id= profilePhoto src=${user.photoURL || '../resources/logo.png'} >
+   ${user.displayName || 'Usuario'} `;
   window.location.hash = '#/timeLine';
 }; */
 
@@ -44,7 +47,7 @@ export const userRegister = (email, password, name) => {
         sendEmailVerification(auth.currentUser)
           .then(() => {
             console.log('correo enviado');
-            alert('Hemos enviado un correo de verificación para validar tu cuenta');
+            alert('Hemos enviado un correo de verificación para validar tu cuenta.');
             window.location.hash = '#/login';
           })
           .catch((error) => {
@@ -71,7 +74,7 @@ export const userLogin = (email1, password1) => {
         window.location.hash = '#/timeLine';
       }
       else {
-        alert("Recuerda validar tu correo");
+        alert('Recuerda validar tu correo.');
         window.location.hash = '#/login';
       }
     })
@@ -132,7 +135,7 @@ export const exit = () => {
   });
 };
 
-//Función para cambiar contraseña olvidada
+// Función para cambiar contraseña olvidada
 export const sendPasswordReset = (email) => {
   sendPasswordResetEmail(auth, email)
     .then(() => {
