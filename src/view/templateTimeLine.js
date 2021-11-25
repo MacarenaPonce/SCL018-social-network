@@ -2,7 +2,7 @@
 import { exit } from '../lib/auth.js';
 import { readData } from '../lib/firestore.js';
 import { postCallback } from '../view/callPost.js'
-import { showPost } from '../view/callPost.js';
+/* import { showPost } from '../view/callPost.js'; */
 
 export const timeLine = () => {
   const quarterPage = document.createElement('div');
@@ -32,7 +32,7 @@ export const timeLine = () => {
        </section>
       `;
 
-  showPost();
+/*   showPost(); */
   const logOut = quarterPage.querySelector('#logOut');
   logOut.addEventListener('click', () => {
     exit();

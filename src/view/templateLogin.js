@@ -8,8 +8,8 @@ export const homeLogin = () => {
 
   firstPage.innerHTML = ` <header> <img src= 'resources/logo.png' class='logo' id='logoCD'> </header> 
   <section class= 'login'> 
-  <input type='email' class= 'input' id='mailLogin' placeholder='Email' />
-  <input type='password' class= 'input' id='passwordLogin' placeholder="correo@example.com" pattern="^\\S+@\\S+\\.\\S+$" title="Ejemplo: correo@example.com" required/>
+  <input type='email' class= 'input' id='mailLogin' placeholder='Correo electrónico' />
+  <input type='password' class= 'input' id='passwordLogin' placeholder="correo@ejemplo.com" pattern="^\\S+@\\S+\\.\\S+$" title="Ejemplo: correo@ejemplo.com" required/>
   <p class = 'info' id = "lostPassword"> Olvidé mi contraseña </p>
 
  <a href='#/timeLine'> <button id = 'btnLogin' class= 'button'> Ingresar </button> </a>

@@ -1,4 +1,4 @@
-import { readData } from '../lib/firestore.js';
+/* import { readData } from '../lib/firestore.js'; */
 // Función que imprime los post
 // Esta función se llama en el TemplateTimeLine
 
@@ -35,6 +35,6 @@ export const postCallback = (posts) => {
   posts.forEach(postContent);
   return postMain;
 };
-export const showPost = () => {
+/* export const showPost = () => {
   readData('Post', postCallback);
-};
+}; */

@@ -20,11 +20,10 @@ export const resetPassword = () => {
   container.classList.add('resetPasswordContainer');
   container.innerHTML = `
     <form id="passwordForm" class="resetPasswordForm">
-      <!--div class="container-logo">
-      <img class="password-logo" src="./resources/logo.png" alt='logoConcertDate'/> 
-      </diV-->
-      <div class= "container-password">
       <img src= "./resources/password.png" class= "password-logo">
+      </div>
+      <div class= "container-password">
+      
       <h1 class="hText"> ¿Tienes problemas para iniciar sesión? </h1> 
       <label class="formText"> Ingresa tu correo y te enviaremos un enlace para que recuperes el acceso a tu cuenta</label>
       <input id="resetEmail" class="input" name="emailReset" type="email" placeholder="correo@example.com" pattern="^\\S+@\\S+\\.\\S+$" title="Ejemplo: correo@example.com" required/>
