@@ -110,17 +110,15 @@ export const loginWithGoogle = () => {
     });
 };
 
-//  auth changed
+//  Observador de estado de autentificación
 export const authChanged = () => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
       const uid = user.uid;
-      console.log('usuario logueado', user.displayName);
-      // profileInit(user);
-      // ...
-    } else {
-      console.log('user is signed out');
-      window.location.hash = '#/login';
+      // console.log('usuario logueado', user.displayName);
+      profileInit(user);
+    } else if (!user) {
+      if ( !['#/resetPassword', '#/account'].includes(window.location.hash)) window.location.hash = '#/login';
     }
   });
 };

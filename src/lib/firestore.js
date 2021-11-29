@@ -4,9 +4,12 @@ import {
   getFirestore,
   query,
   onSnapshot,
-  orderBy } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js';
+  orderBy, 
+  doc,
+  deleteDoc } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js';
 import { app } from '../lib/firebaseConfig.js';
 import { auth } from '../lib/auth.js';
+
 
 const db = getFirestore(app);
 
@@ -16,6 +19,8 @@ export const createPost = async (artistValue, categoryValue, dateValue, descript
     // Add a new document with a generated id.
     const docRef = await addDoc(collection(db, 'Post'), {
       userName: auth.currentUser.displayName,
+      // Para obtener el id del usuario que creó el post
+      userId: auth.currentUser.uid,
      /*  photo: auth.currentUser.user.photoURL, */
       artist: artistValue,
       category: categoryValue,
@@ -38,10 +43,21 @@ export const readData = (nameCollection, callback) => {
   onSnapshot(q, (querySnapshot) => {
     const posts = [];
     querySnapshot.forEach((doc) => {
-      posts.push(doc.data());
+      posts.push({ ...doc.data(), id: doc.id });
       console.log(doc);
     });
     callback(posts);
     console.log(posts);
   });
 };
+
+// Función para borrar post
+// 
+export const deletePost = async (idPost) => {
+ 
+  const confirm = window.confirm('¿Quieres eliminar esta publicación?');
+  if (confirm) {
+    await deleteDoc(doc(db, "Post", idPost));
+  }
+};
+

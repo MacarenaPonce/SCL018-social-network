@@ -44,7 +44,9 @@ body {
     display: block;
     margin: auto;
 }
-
+#lostPassword {
+    color: #4C8A8A;
+}
 /* Página de createAccount (OK) */   
 
 /* Página olvidé mi contraseña */
@@ -87,12 +89,12 @@ body {
 
 #ccn {
     font-size: 10px;
-    color:rgb(240, 212, 185);
+    color:#4C8A8A;
 }
 
 #vis {
     font-size: 10px;
-
+    color:#4C8A8A;
 }
 /* Post */
 

@@ -10,8 +10,8 @@ export const createAccount = () => {
    </header> 
    <section class= 'createAccount' id= 'createAccount'> 
    <input type='text' id='createName' class = 'input' placeholder='Nombre de usuario'/>
-      <input type='email' id='mailRegister' class = 'input'  placeholder='Email' />
-      <input type='password' id='passwordRegister' class = 'input' placeholder='password'/>
+      <input type='email' id='mailRegister' class = 'input'  placeholder='Correo electrónico' />
+      <input type='password' id='passwordRegister' class = 'input' placeholder='Contraseña'/>
   
       <p class = 'info'>  <input type='checkbox' class = 'info' class= 'disabled' id='conditions' value='check'/> Acepto términos y condiciones </p>
   

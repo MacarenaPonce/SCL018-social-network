@@ -17,7 +17,7 @@ export const post = () => {
         <input type='text' id='category' class = 'input'  placeholder='Categoría' />
         <input type='date' id='date' class = 'input' placeholder='Fecha'/>
         <input type='text' id='location' class = 'input' placeholder='Ubicación'/>
-        <input type='url' id='links' class = 'input' placeholder='Links de interes'/>
+        <input type='url' id='links' class = 'input' placeholder='Links de interés'/>
         <input type='text' id='description' class = 'input' placeholder= 'Descripción'/>
        
     
