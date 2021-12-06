@@ -14,7 +14,7 @@ export const post = () => {
   </header>
   <section class= 'post-template' id= 'post'>
   <input type='text' id='artist' class = 'input' placeholder='Artista/s'/>
-        <input type='text' id='category' class = 'input'  placeholder='Categoría' />
+        <input type='text' id='category' class = 'input'  placeholder='Género musical' />
         <input type='date' id='date' class = 'input' placeholder='Fecha'/>
         <input type='text' id='location' class = 'input' placeholder='Ubicación'/>
         <input type='url' id='links' class = 'input' placeholder='Links de interés'/>

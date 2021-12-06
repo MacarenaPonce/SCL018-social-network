@@ -13,7 +13,7 @@ import { auth } from '../lib/auth.js';
 
 const db = getFirestore(app);
 
-//Acá se crea el post
+/* //Acá se crea el post
 export const createPost = async (artistValue, categoryValue, dateValue, descriptionValue, urlValue, locationValue) => {
   try {
     // Add a new document with a generated id.
@@ -21,7 +21,7 @@ export const createPost = async (artistValue, categoryValue, dateValue, descript
       userName: auth.currentUser.displayName,
       // Para obtener el id del usuario que creó el post
       userId: auth.currentUser.uid,
-     /*  photo: auth.currentUser.user.photoURL, */
+     /*  photo: auth.currentUser.user.photoURL, 
       artist: artistValue,
       category: categoryValue,
       date: dateValue,
@@ -30,10 +30,32 @@ export const createPost = async (artistValue, categoryValue, dateValue, descript
       location: locationValue,
       datePost: Date(Date.now()),
     });
-    console.log('Document written with ID: ', docRef);
+    console.log(auth.currentUser.uid);
     return docRef;
   } catch (e) {
     console.error('Error adding document: ', e);
+  }
+}; */
+
+export const createPost = async (artistValue, categoryValue, dateValue, descriptionValue, urlValue, locationValue) => {
+  try {
+    // Add a new document with a generated id.
+    const docRef = await addDoc(collection(db, 'Post'), {
+      userName: auth.currentUser.displayName,
+      photo: auth.currentUser.photoURL,
+      userId: auth.currentUser.uid,
+      artist: artistValue,
+      category: categoryValue,
+      date: dateValue,
+      description: descriptionValue,
+      links: urlValue,
+      location: locationValue,
+      datePost: Date(Date.now()),
+
+    });
+    return docRef;
+  } catch (e) {
+    // console.error('Error adding document: ', e);
   }
 };
 

@@ -8,7 +8,7 @@ export const postCallback = (posts) => {
   const postMain = document.querySelector('#containerPost');
   postMain.innerHTML = '';
   const postContent = (element) => {
-    console.log(element); 
+    console.log(element.userId); 
     const postUser = document.createElement('div');
     postUser.className = 'allPost';
     postUser.innerHTML += `
@@ -37,16 +37,18 @@ export const postCallback = (posts) => {
     if (element.userId === auth.currentUser.uid)
     {
       postUser.innerHTML+=`<button class="btn-Delete" id="btn-delete" value=${element.id} > Eliminar </button>`
-    }
-    ;
+    };
     postMain.appendChild(postUser);
-  };
+  }
+  ;
   posts.forEach(postContent);
-  
+  /* console.log(element.userId);
+  console.log(auth.currentUser.uid); */
 // se llama a función para borrar publicación
 const btnDelete = postMain.querySelectorAll('.btn-Delete');
 //busca solo el valor del btn
 console.log(btnDelete);
+
 btnDelete.forEach((item) => {
   const idPost = item.value;
   item.addEventListener('click', () => deletePost(idPost));

@@ -222,7 +222,6 @@ body {
 #btnPublish{
     position: fixed;
     bottom: 30px;
-    right: 20px;
     margin-bottom: 10%;
     background-color: transparent;
     border: none;
@@ -230,7 +229,6 @@ body {
 
 .publish-btn{
     width: 20%;
-    margin-left: 70%;
 }
 
 .title .userInfo{
